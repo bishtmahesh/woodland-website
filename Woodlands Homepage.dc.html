@@ -1718,10 +1718,35 @@
       gap: 6px;
     }
 
-    .bento-grid-modern { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; gap: 12px; }
-    .bento-grid-modern > div { grid-row: auto !important; height: auto !important; min-height: 0 !important; }
-    .bento-grid-modern > div:nth-child(3) { grid-column: 1 / -1; height: 220px !important; }
+    .bento-grid-modern { grid-template-columns: 1fr; grid-template-rows: auto; gap: 12px; }
+    .bento-grid-modern > div { grid-row: auto !important; grid-column: 1 / -1 !important; height: auto !important; min-height: 0 !important; }
+    .bento-grid-modern > div:nth-child(3) { height: 220px !important; }
     .tech-grid, .footer-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    .doctor-specialty-pills {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      max-width: 100% !important;
+      gap: 6px !important;
+    }
+    .doctor-specialty-pills span {
+      font-size: 10px !important;
+      padding: 6px 6px !important;
+      border-radius: 100px !important;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .doctor-cta-buttons {
+      flex-direction: column !important;
+      gap: 12px !important;
+    }
     .journey-body { grid-template-columns: 1fr; gap: 32px; margin-top: 36px; }
     .journey-image-wrap { position: static; order: -1; }
     .journey-image-wrap img { height: 260px; }
@@ -2080,7 +2105,7 @@
       </p>
 
       <!-- Specialty Pills -->
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; max-width: 640px;">
+      <div class="doctor-specialty-pills" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; max-width: 640px;">
         <span style="font-size: 13px; font-weight: 600; background: #EAF2ED; border: 1px solid rgba(10,35,28,0.1); color: var(--forest-dark); padding: 8px 18px; border-radius: 100px;">Dental Implants</span>
         <span style="font-size: 13px; font-weight: 600; background: #EAF2ED; border: 1px solid rgba(10,35,28,0.1); color: var(--forest-dark); padding: 8px 18px; border-radius: 100px;">Minimally Invasive Aesthetics</span>
         <span style="font-size: 13px; font-weight: 600; background: #EAF2ED; border: 1px solid rgba(10,35,28,0.1); color: var(--forest-dark); padding: 8px 18px; border-radius: 100px;">Oral Surgery</span>
@@ -2089,7 +2114,7 @@
         <span style="font-size: 13px; font-weight: 600; background: #EAF2ED; border: 1px solid rgba(10,35,28,0.1); color: var(--forest-dark); padding: 8px 18px; border-radius: 100px;">Composite Bonding</span>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+      <div class="doctor-cta-buttons" style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
         <a href="#contact" class="btn-primary btn-gold" style="padding: 16px 32px; font-size: 15px;">Book An Appointment</a>
         <a href="tel:02088665556" style="padding: 16px 28px; font-size: 15px; border: 1.5px solid var(--forest-dark); color: var(--forest-dark); border-radius: 100px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
