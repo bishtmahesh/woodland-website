@@ -2022,7 +2022,7 @@
     cursor: pointer;
   }
     .mobile-bottom-bar {
-      display: none !important;
+      display: flex !important;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -2129,12 +2129,20 @@
   @media (max-width: 768px) {
     .whatsapp-float {
       right: 16px;
-      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(88px + env(safe-area-inset-bottom, 0px));
       width: 54px;
       height: 54px;
     }
   }
 
+
+  /* Authoritative override: sticky Call/Book CTA bar and WhatsApp button — mobile only */
+  .mobile-bottom-bar { display: none !important; }
+  .whatsapp-float { bottom: 24px !important; }
+  @media (max-width: 768px) {
+    .mobile-bottom-bar { display: flex !important; }
+    .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
+  }
 </style>
 </head>
 <body>
