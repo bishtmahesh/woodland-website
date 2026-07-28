@@ -22,15 +22,9 @@
 <meta name="twitter:description" content="A calm, caring dental practice in North Harrow led by Specialist Orthodontist Dr. Fiona Millen. Advanced dentistry, CBCT 3D scanning, composite bonding & implants.">
 <meta name="twitter:image" content="https://www.woodlandscentrefordentistry.co.uk/hero.webp">
 
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
   :root {
     --forest-dark: #0A231C;
@@ -1013,6 +1007,7 @@
   .journey-image-wrap {
     position: sticky;
     top: 120px;
+    align-self: start;
     border-radius: 24px;
     overflow: hidden;
     border: 1px solid rgba(212, 175, 55, 0.25);
@@ -2245,7 +2240,8 @@
   }
 
 </style>
-</helmet>
+</head>
+<body>
 
 <div class="app-shell">
 
@@ -2922,7 +2918,7 @@
         </div>
       </div>
 
-      <div class="journey-image-wrap" style="position: relative;">
+      <div class="journey-image-wrap">
         <img src="./AdobeStock_33367206.webp" alt="Woodlands Centre for Dentistry treatment room">
         <div class="journey-image-caption">
           <strong>Calm by Design</strong>
@@ -2990,13 +2986,6 @@
 
     <!-- Before / After Card Carousel -->
     <div class="ba-carousel-outer">
-      <button class="ba-carousel-arrow ba-prev" onclick="scrollGallery(-1)" aria-label="Previous case">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="ba-carousel-arrow ba-next" onclick="scrollGallery(1)" aria-label="Next case">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-
       <div class="ba-carousel" id="ba-carousel">
         <div class="ba-card" data-category="bonding">
           <div class="ba-slider">
@@ -3013,10 +3002,6 @@
               <div class="ba-handle-circle">↔</div>
             </div>
             <span class="ba-card-tag">Composite Bonding</span>
-          </div>
-          <div class="ba-caption">
-            <h3>Composite Bonding &amp; Smile Alignment Case</h3>
-            <p>Full 6-tooth composite bonding and whitening transformation achieved right here at Woodlands Centre for Dentistry.</p>
           </div>
         </div>
 
@@ -3036,10 +3021,6 @@
             </div>
             <span class="ba-card-tag">Teeth Whitening</span>
           </div>
-          <div class="ba-caption">
-            <h3>Boutique Teeth Whitening Case</h3>
-            <p>8 shades brighter achieved using our tailored home whitening trays combined with in-surgery activation.</p>
-          </div>
         </div>
 
         <div class="ba-card" data-category="implants">
@@ -3058,10 +3039,6 @@
             </div>
             <span class="ba-card-tag">Dental Implants</span>
           </div>
-          <div class="ba-caption">
-            <h3>3D CBCT Guided Implant Restoration</h3>
-            <p>Single tooth implant replacement fully integrated with natural ceramic crown for permanent aesthetics and function.</p>
-          </div>
         </div>
 
         <div class="ba-card" data-category="aligners">
@@ -3079,10 +3056,6 @@
               <div class="ba-handle-circle">↔</div>
             </div>
             <span class="ba-card-tag">Clear Aligners</span>
-          </div>
-          <div class="ba-caption">
-            <h3>ClearCorrect Invisible Aligners Case</h3>
-            <p>Discreet orthodontic alignment completed in 7 months without traditional metal braces.</p>
           </div>
         </div>
       </div>
@@ -3438,6 +3411,5 @@
     </a>
   </div>
 
-</x-dc>
 </body>
 </html>
