@@ -1720,7 +1720,8 @@
 
     .bento-grid-modern { grid-template-columns: 1fr; grid-template-rows: auto; gap: 12px; }
     .bento-grid-modern > div { grid-row: auto !important; grid-column: 1 / -1 !important; height: auto !important; min-height: 0 !important; }
-    .bento-grid-modern > div:nth-child(3) { height: 220px !important; }
+    .bento-grid-modern > div:nth-child(3) { height: 220px !important; overflow: hidden !important; }
+    .bento-grid-modern > div:nth-child(3) img { min-height: 0 !important; height: 100% !important; }
     .tech-grid, .footer-grid { grid-template-columns: 1fr; gap: 16px; }
 
     .doctor-specialty-pills {
