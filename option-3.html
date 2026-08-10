@@ -3805,7 +3805,23 @@
 
 </div>
 
+<script src="gsap.min.js"></script>
 <script>
+  (function() {
+    var logo = document.querySelector('.brand-logo img');
+    if (logo && window.gsap) {
+      gsap.set(logo, { opacity: 0, scale: 0.55, y: -14, transformOrigin: '50% 50%' });
+      gsap.to(logo, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'back.out(1.7)',
+        delay: 0.2
+      });
+    }
+  })();
+
   let currentHeroSlide = 0;
 
   function setHeroSlide(index) {
