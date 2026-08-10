@@ -2738,6 +2738,12 @@
   </div>
   <div id="logo-intro-text" style="margin-top:18px; font-family:'Manrope', sans-serif; font-size:13px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#CFA555; opacity:0;">Advanced Dentistry &bull; North Harrow, London</div>
 </div>
+<script>
+  if (sessionStorage.getItem('woodlandsIntroShown')) {
+    var __introEl = document.getElementById('logo-intro');
+    if (__introEl) __introEl.style.display = 'none';
+  }
+</script>
 
 <div class="app-shell">
 
@@ -3821,6 +3827,12 @@
     var introText = document.getElementById('logo-intro-text');
     var ring = document.getElementById('logo-intro-ring');
     if (!overlay || !logo || !window.gsap) return;
+
+    if (sessionStorage.getItem('woodlandsIntroShown')) {
+      overlay.style.display = 'none';
+      return;
+    }
+    sessionStorage.setItem('woodlandsIntroShown', '1');
 
     document.body.style.overflow = 'hidden';
 
