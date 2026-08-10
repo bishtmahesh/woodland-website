@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --forest-dark: #0A231C;
@@ -75,7 +75,7 @@
   }
 
   h1, h2, h3, h4, h5, h6, .section-title, .hero-title, .bento-header-title, .service-card-title, .tech-title, .serif {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-weight: 400;
     letter-spacing: 0.02em;
     line-height: 1.15;
@@ -213,53 +213,143 @@
     gap: 8px;
   }
 
+  /* Top Utility Ribbon */
+  .top-utility-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5001;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(10,35,28,0.08);
+  }
+
+  .top-utility-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 8px 16px;
+    width: 100%;
+  }
+
+  .utility-left {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .utility-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--forest-dark);
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+
+  .utility-item svg { flex-shrink: 0; color: var(--gold-warm); }
+
+  .utility-item:hover { color: var(--gold-warm); }
+
+  .utility-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .utility-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--forest-dark);
+    color: var(--ivory);
+    transition: var(--transition-fast);
+  }
+
+  .utility-social a:hover {
+    background: var(--gold-warm);
+  }
+
   /* Floating Pill Navigation */
   .navbar-wrapper {
     position: fixed;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 80px);
-    max-width: 1380px;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    max-width: none;
     z-index: 5000;
     isolation: isolate;
   }
 
   .navbar {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    padding: 8px 28px;
+    padding: 18px 16px;
     width: 100%;
     position: relative;
-    background: rgba(255, 255, 255, 1);
+    background: #15261C;
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
-    border: 1.5px solid var(--gold-warm);
+    border: none;
+    border-bottom: 1.5px solid var(--gold-warm);
     border-radius: 0;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
     transition: var(--transition-smooth);
   }
 
   .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: #15261C;
     border-color: var(--gold-warm);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
   }
 
   .navbar-left {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 48px;
+    gap: 22px;
     min-width: 0;
   }
 
   .navbar-center {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding: 0 12px 0 0;
+    padding: 0 48px;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    min-width: 0;
+  }
+
+  .nav-link-outline {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 18px !important;
+    border-radius: 100px;
+    border: 1.5px solid var(--gold-warm);
+    color: var(--gold-warm) !important;
+    font-size: 13.5px !important;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link-outline:hover {
+    background: var(--gold-warm);
+    color: var(--forest-dark) !important;
   }
 
   .brand-logo {
@@ -332,21 +422,21 @@
   }
 
   .nav-link {
-    font-size: 14.5px;
+    font-size: 15.5px;
     font-weight: 600;
     color: var(--gold-warm);
     position: relative;
     padding: 4px 0;
     white-space: nowrap;
     text-decoration: none !important;
-    letter-spacing: 0.3px;
-    text-transform: none;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
     transition: color var(--transition-fast);
     font-family: 'Manrope', sans-serif;
   }
 
   .nav-link:hover {
-    color: var(--forest-dark);
+    color: var(--ivory);
   }
 
   /* Nav Dropdowns */
@@ -610,7 +700,7 @@
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
-    padding: 120px 64px 64px;
+    padding: 190px 64px 64px;
     background: var(--forest-dark);
   }
 
@@ -689,10 +779,10 @@
   }
 
   .hero-title {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
-    font-size: 112px;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 68px;
     font-weight: 400;
-    line-height: 0.85;
+    line-height: 1.2;
     color: var(--ivory);
     margin: 20px 0 24px;
     letter-spacing: -1.8px;
@@ -700,7 +790,6 @@
   }
 
   .hero-title span {
-    font-style: italic;
     color: var(--ivory);
     font-weight: 400;
   }
@@ -821,7 +910,7 @@
   }
 
   .bento-header-title {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-size: 48px;
     font-weight: 400;
     color: var(--forest-dark);
@@ -1012,7 +1101,7 @@
     position: absolute;
     bottom: -20px;
     right: -20px;
-    background: var(--glass-bg);
+    background: var(--ivory);
     backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
@@ -1363,7 +1452,7 @@
   }
 
   .service-card-title {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-size: 28px;
     font-weight: 400;
     color: var(--forest-dark);
@@ -1429,7 +1518,7 @@
   }
 
   .tech-title {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-size: 26px;
     color: var(--ivory);
     margin-bottom: 12px;
@@ -1671,7 +1760,7 @@
   }
 
   .ba-caption h3 {
-    font-family: 'Parisienne', 'Cormorant Garamond', cursive;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-size: 28px;
     font-weight: 400;
     color: var(--forest-dark);
@@ -1826,10 +1915,65 @@
     color: var(--sage);
   }
 
+  /* Patient Stories */
+  .patient-video-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 380px;
+    box-shadow: 0 6px 20px rgba(10,35,28,0.1);
+  }
+
+  .patient-video-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .patient-video-card:hover img {
+    transform: scale(1.06);
+  }
+
+  .patient-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,35,28,0.8), rgba(10,35,28,0.05) 55%);
+  }
+
+  .patient-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: rgba(255,253,249,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .patient-video-card:hover .patient-video-play {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .patient-video-caption {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+    color: var(--ivory);
+  }
+
   /* Footer */
   .footer-section {
     padding: 80px 5% 40px;
-    background: var(--forest);
+    background: #15261C;
     color: var(--sage);
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     width: 100%;
@@ -1981,7 +2125,6 @@
 
   .mobile-hero-text .hero-title span {
     color: var(--ivory);
-    font-style: italic;
   }
 
   /* Responsive Breakpoints & Card Overflow Fixes */
@@ -2001,7 +2144,7 @@
   }
 
   @media (max-width: 992px) {
-    .hero-title { font-size: 76px; }
+    .hero-title { font-size: 56px; }
     .section-title { font-size: 38px !important; }
     .bento-header-title { font-size: 38px; }
   }
@@ -2022,6 +2165,13 @@
     .ortho-heritage-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     .ortho-heritage-grid img { height: 320px !important; }
 
+    /* ── Patient Stories ── */
+    .patient-video-grid { grid-template-columns: 1fr !important; }
+    .patient-ba-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* ── Top Utility Ribbon ── */
+    .top-utility-bar { display: none; }
+
     /* ── Navbar ── */
     .navbar-wrapper {
       left: 0;
@@ -2032,7 +2182,8 @@
       max-width: 100%;
       padding: 0;
     }
-    .navbar { padding: 6px 16px; border-radius: 0; border-left: none; border-right: none; border-top: none; }
+    .navbar { display: flex; justify-content: space-between; padding: 6px 16px; border-radius: 0; border-left: none; border-right: none; border-top: none; }
+    .navbar-center { padding: 0; }
     .brand-logo img { height: 64px !important; margin: 0 !important; }
     .nav-links { display: none; }
     .brand-sub, .brand-est { display: none; }
@@ -2300,7 +2451,7 @@
   }
 
   @media (max-width: 480px) {
-    .hero-title { font-size: 42px; }
+    .hero-title { font-size: 36px; }
     .section-title { font-size: 30px !important; white-space: normal !important; }
     .gold-badge { font-size: 11px; padding: 5px 12px; }
   }
@@ -2486,17 +2637,37 @@
 
 <div class="app-shell">
 
+  <!-- Top Utility Ribbon -->
+  <div class="top-utility-bar">
+    <div class="top-utility-inner">
+      <div class="utility-left">
+        <a href="https://maps.google.com/?q=106+Woodlands,+North+Harrow,+HA2+6EW" target="_blank" rel="noopener" class="utility-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          106 Woodlands, North Harrow, HA2 6EW
+        </a>
+        <a href="tel:02088665556" class="utility-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          020 8866 5556
+        </a>
+      </div>
+      <div class="utility-social">
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.17 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.77 8.44-4.94 8.44-9.94z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://wa.me/442088665556" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11a16.6 16.6 0 0 1-1.6-.6c-2.83-1.22-4.68-4.08-4.82-4.27-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.36.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.16-.19.7-.81.89-1.09.19-.28.37-.23.63-.14.26.09 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Free-floating Navigation Bar -->
   <div class="navbar-wrapper" id="navbarWrapper">
     <nav class="navbar" id="mainNavbar">
-      <!-- Left: Logo -->
-      <div class="navbar-center">
-        <a href="#" class="brand-logo">
-          <img src="woodlands-logo.webp" alt="Woodlands Centre for Dentistry" style="height: 150px; width: auto; display: block; border-radius: 12px; margin: -25px 0;">
-        </a>
-      </div>
-
-      <!-- Center: Nav Links -->
+      <!-- Left: Nav Links -->
       <div class="navbar-left nav-links">
         <a href="#" class="nav-link">Home</a>
         <div class="nav-item-dropdown">
@@ -2542,6 +2713,18 @@
           </div>
         </div>
         <a href="#gallery" class="nav-link">Smile Gallery</a>
+        <a href="#contact" class="nav-link">Referrals</a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="navbar-center">
+        <a href="#" class="brand-logo">
+          <img src="woodlands-logo-transparent.webp" alt="Woodlands Centre for Dentistry" style="height: 116px; width: auto; display: block; margin: 0;">
+        </a>
+      </div>
+
+      <!-- Right: Nav Links + CTA -->
+      <div class="navbar-right nav-actions">
         <a href="#contact" class="nav-link">Fees</a>
         <div class="nav-item-dropdown">
           <a href="javascript:void(0)" class="nav-link">Patient Info <span class="nav-caret">▾</span></a>
@@ -2550,16 +2733,26 @@
             <a href="#about" class="nav-dropdown-link">Patient Resources</a>
           </div>
         </div>
-        <a href="#contact" class="nav-link">Referrals</a>
-        <a href="tel:02088665556" class="nav-link" style="display: flex; align-items: center; gap: 6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          020 8866 5556
-        </a>
-        <a href="#contact" class="btn-primary btn-gold" style="color: var(--ivory);">Book An Appointment</a>
+        <div class="nav-item-dropdown">
+          <a href="javascript:void(0)" class="nav-link nav-link-outline">Braces Treatment <span class="nav-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <div class="nav-dropdown-group-label" style="border-top: none; margin-top: 0;">Adult Orthodontics</div>
+            <a href="#treatments" class="nav-dropdown-link">Fixed Braces</a>
+            <a href="#treatments" class="nav-dropdown-link">Removable Braces</a>
+            <a href="#treatments" class="nav-dropdown-link">Retainers</a>
+            <a href="#treatments" class="nav-dropdown-link">Invisalign First</a>
+            <div class="nav-dropdown-group-label">Children's Orthodontics</div>
+            <a href="#treatments" class="nav-dropdown-link">Interceptive Treatment</a>
+            <a href="#treatments" class="nav-dropdown-link">Functional Braces</a>
+            <a href="#treatments" class="nav-dropdown-link">Removable Braces for Kids</a>
+            <a href="#treatments" class="nav-dropdown-link">Invisalign for Teens</a>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary btn-gold" style="color: var(--ivory); padding: 11px 24px; font-size: 13px;">Book Now</a>
       </div>
       <!-- Mobile Hamburger -->
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" style="display:none;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A231C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CFA555" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </nav>
   </div>
@@ -2622,8 +2815,8 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
       Advanced Dentistry &bull; North Harrow, London
     </div>
-    <h1 class="hero-title" style="font-size: 34px; margin: 12px 0 14px;">Where nature<br><span>meets your smile.</span></h1>
-    <p style="font-size: 15px; font-weight: 300; color: var(--sage-light); line-height: 1.65; margin-bottom: 24px;">A calm, caring dental practice in North Harrow, where hospital-grade dentistry meets warmth and unhurried personal care.</p>
+    <h1 class="hero-title" style="font-size: 34px; margin: 12px 0 14px;">Your Journey to a<br>Healthier, Happier Smile<br><span>at Woodlands.</span></h1>
+    <p style="font-size: 15px; font-weight: 300; color: var(--sage-light); line-height: 1.65; margin-bottom: 24px;">A friendly dental practice in North Harrow, where hospital-level expertise meets genuine warmth and unhurried, personal care.</p>
     <div style="display: flex; gap: 32px;">
       <div>
         <div style="font-size: 28px; font-weight: 700; color: var(--ivory); font-family: 'Manrope', sans-serif; line-height: 1;">4.9★</div>
@@ -2661,8 +2854,8 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
         Advanced Dentistry &bull; North Harrow, London
       </div>
-      <h1 class="hero-title">Where nature<br><span style="display: block;">meets your smile.</span></h1>
-      <p class="hero-subtitle">A calm, caring dental practice in North Harrow, where hospital-grade dentistry meets warmth, clarity, and unhurried personal care.</p>
+      <h1 class="hero-title">Your Journey to a<br>Healthier, Happier Smile<br><span style="display: block;">at Woodlands.</span></h1>
+      <p class="hero-subtitle">We're a friendly dental practice in North Harrow, blending hospital-level expertise with genuine warmth — so every visit feels calm, clear and unhurried.</p>
       
       <div class="hero-actions">
         <a href="#contact" class="btn-primary btn-gold" style="font-size: 16px;">
@@ -2676,7 +2869,7 @@
     </div>
 
     <div class="hero-stats-bar">
-      <p class="hero-tagline">Specialist orthodontic &amp; luxury dental practice caring for North Harrow and surrounding areas since 1999.</p>
+      <p class="hero-tagline">Specialist orthodontic and dental care for North Harrow and the surrounding area, since 1999.</p>
 
       <div class="hero-stats-group">
         <div class="stat-card">
@@ -2743,10 +2936,10 @@
         <div class="gold-badge" style="margin-bottom: 18px;">A Woodlands Heritage</div>
         <h2 class="section-title" style="color: var(--forest-dark); font-size: 44px; margin-bottom: 20px;">Specialist Orthodontics, Since Day One</h2>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 16px;">
-          Long before "comprehensive dentistry" entered our name, Woodlands was already trusted across North Harrow as a specialist orthodontic practice — the discipline our reputation was built on.
+          Long before "comprehensive dentistry" became part of our name, Woodlands was already known across North Harrow for one thing: excellent orthodontics. That's the reputation we were built on, and it's still what we care about most.
         </p>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 24px;">
-          As we grow into a full-service dental centre, that heritage remains our anchor. Every aligner, brace, and bite correction is still guided by the same specialist standard patients have relied on for years. Dr. Millen qualified in dentistry in Bristol in 1988 before training in orthodontics at Guy's Hospital, gaining her Masters in Orthodontics and Membership from the Royal College of Surgeons. Practice principal since 2004, she was one of the first orthodontists in the UK qualified in lingual orthodontics.
+          As we've grown into a full dental centre, that heritage hasn't gone anywhere. Every brace, aligner and bite correction still follows the same specialist standard our patients have trusted for years. Dr Millen qualified in dentistry in Bristol in 1988, then trained in orthodontics at Guy's Hospital, gaining her Masters in Orthodontics and Membership from the Royal College of Surgeons. She's been Practice Principal since 2004, and was one of the first orthodontists in the UK trained in lingual orthodontics.
         </p>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px;">
           <span style="padding: 8px 16px; border-radius: 100px; background: var(--cream); border: 1px solid rgba(212,175,55,0.3); font-size: 13px; font-weight: 600; color: var(--forest-dark);">Invisalign&reg;</span>
@@ -2759,6 +2952,9 @@
         <a href="#treatments" class="btn-primary btn-gold">Explore Orthodontic Care</a>
       </div>
       <div style="position: relative;">
+        <div style="position: absolute; bottom: -20px; right: -20px; z-index: 2; background: var(--ivory); border-radius: 16px; padding: 18px 28px; box-shadow: 0 8px 24px rgba(10,35,28,0.15);">
+          <img src="./invisalign-provider-logo.webp" alt="Invisalign Provider" style="height: 52px; width: auto; display: block;">
+        </div>
         <img src="./AdobeStock_647094811.webp" alt="Smiling patient at Woodlands Centre for Dentistry" style="width: 100%; height: 620px; object-fit: cover; border-radius: 50% 50% 0 0; box-shadow: 0 6px 14px rgba(0,0,0,0.08);">
       </div>
     </div>
@@ -2784,10 +2980,10 @@
       <p style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-warm); margin-bottom: 24px;">Principal Dentist · LDS RCS Eng, MFDS RCS Edin</p>
       
       <p class="section-desc" style="margin-bottom: 20px; font-size: 16.5px; line-height: 1.7; max-width: 640px;">
-        Dr. Sowjanya completed her BDS in 2008 before gaining over 7 years of hospital experience in Oral &amp; Maxillofacial Surgery and Oral Medicine at leading NHS Foundation Trusts, including Guy's and St Thomas' Hospital.
+        Dr Sowjanya qualified with her BDS in 2008, then spent over seven years building hospital experience in Oral &amp; Maxillofacial Surgery and Oral Medicine at leading NHS Foundation Trusts, including Guy's and St Thomas' Hospital.
       </p>
       <p class="section-desc" style="margin-bottom: 28px; font-size: 15.5px; line-height: 1.7; color: var(--text-muted); max-width: 640px;">
-        An advocate of Minimally-Invasive Aesthetic Dentistry, she holds qualifications including LDS RCS Eng, MFDS RCS Edin, a Certificate in Implantology (VSS Academy–UCLan University), and is working towards a PG Diploma in Implant Dentistry.
+        She's a firm believer in minimally invasive, aesthetic dentistry, and holds qualifications including LDS RCS Eng, MFDS RCS Edin and a Certificate in Implantology (VSS Academy–UCLan University), with a PG Diploma in Implant Dentistry currently underway.
       </p>
 
       <!-- Specialty Pills -->
@@ -2812,13 +3008,81 @@
 
   <!-- Featured Specialist Orthodontics Heritage Block -->
 
+  <!-- Patient Stories: Video Testimonials + Before/After -->
+  <section id="patient-stories" class="leaf-motif-left" style="padding: 90px 24px; background: var(--ivory);">
+    <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+      <div class="gold-badge" style="margin-bottom: 14px;">Real Patients, Real Results</div>
+      <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px;">Patient Stories</h2>
+      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Hear directly from the people we've treated, and see their transformations for yourself.</p>
+    </div>
+
+    <div class="patient-video-grid" style="max-width: 1180px; margin: 0 auto 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+      <div class="patient-video-card">
+        <img src="./AdobeStock_1144258964.webp" alt="Patient admiring his new smile after treatment">
+        <div class="patient-video-overlay"></div>
+        <div class="patient-video-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--forest-dark)"><path d="M8 5v14l11-7z"></path></svg>
+        </div>
+        <div class="patient-video-caption">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px;">Dental Implants</div>
+          <div style="font-size: 17px; font-weight: 700;">Watch the Story</div>
+        </div>
+      </div>
+      <div class="patient-video-card">
+        <img src="./AdobeStock_141987017.webp" alt="Smiling patient in the treatment chair">
+        <div class="patient-video-overlay"></div>
+        <div class="patient-video-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--forest-dark)"><path d="M8 5v14l11-7z"></path></svg>
+        </div>
+        <div class="patient-video-caption">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px;">Invisalign</div>
+          <div style="font-size: 17px; font-weight: 700;">Watch the Story</div>
+        </div>
+      </div>
+      <div class="patient-video-card">
+        <img src="./AdobeStock_323711107.webp" alt="Patient reviewing treatment with their dentist">
+        <div class="patient-video-overlay"></div>
+        <div class="patient-video-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--forest-dark)"><path d="M8 5v14l11-7z"></path></svg>
+        </div>
+        <div class="patient-video-caption">
+          <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 4px;">Root Canal &amp; Crown</div>
+          <div style="font-size: 17px; font-weight: 700;">Watch the Story</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="patient-ba-grid" style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+      <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
+        <img src="./AdobeStock_1901975786.webp" alt="Before composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <span style="position: absolute; top: 10px; left: 10px; background: rgba(10,35,28,0.85); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">BEFORE</span>
+      </div>
+      <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
+        <img src="./AdobeStock_748727671.webp" alt="After composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <span style="position: absolute; top: 10px; left: 10px; background: var(--gold-warm); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">AFTER</span>
+      </div>
+      <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
+        <img src="./AdobeStock_430458359.webp" alt="Before teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <span style="position: absolute; top: 10px; left: 10px; background: rgba(10,35,28,0.85); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">BEFORE</span>
+      </div>
+      <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
+        <img src="./AdobeStock_540616761.webp" alt="After teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <span style="position: absolute; top: 10px; left: 10px; background: var(--gold-warm); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">AFTER</span>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="#gallery" class="btn-outline">See the Full Smile Gallery</a>
+    </div>
+  </section>
+
   <!-- Real Patient Reviews Rolling Marquee (Below Doctor Section) -->
   <section class="reviews-marquee-section leaf-motif-right">
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; padding: 0 5%; margin-bottom: 48px; flex-wrap: wrap;">
       <div>
         <div class="gold-badge" style="margin-bottom: 14px;">Patient Reviews</div>
         <h2 class="section-title" style="font-size: 46px; margin-bottom: 12px;">Words from Our Patients</h2>
-        <p class="section-desc" style="font-size: 16px; margin: 0;">Rated 4.9 Stars on Google with over 450+ verified patient reviews.</p>
+        <p class="section-desc" style="font-size: 16px; margin: 0;">Rated 4.9 stars on Google, with over 450 verified reviews from patients like you.</p>
       </div>
       <div>
         <a href="https://www.google.com/search?q=Woodlands+Centre+for+Dentistry+North+Harrow+reviews" target="_blank" rel="noopener" style="padding: 14px 28px; font-size: 14.5px; border: 1.5px solid var(--forest-dark); color: var(--forest-dark); border-radius: 100px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; background: var(--ivory); white-space: nowrap;">
@@ -2972,8 +3236,8 @@
   <!-- Bento Grid: The Woodlands Difference (Bento Layout with Trimmed Content) -->
   <section id="why-us" class="bento-section leaf-motif-left">
     <div class="bento-header">
-      <h2 class="bento-header-title">Why Choose us</h2>
-      <p class="bento-header-desc">Specialist dental team, 25 years of proven excellence, personalized approach, and dedicated unhurried care to help your smile thrive.</p>
+      <h2 class="bento-header-title">Why Choose Us</h2>
+      <p class="bento-header-desc">A specialist team, 25 years of experience, and a personalised, unhurried approach — everything your smile needs to thrive.</p>
     </div>
 
     <div class="bento-grid-modern">
@@ -3023,7 +3287,7 @@
     <div class="section-header center" style="text-align: center; max-width: 900px; margin: 0 auto 48px; padding: 0 24px;">
       <div class="gold-badge" style="margin-bottom: 14px;">Comprehensive Services</div>
       <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px; white-space: nowrap;">Every Treatment Under One Calm Roof</h2>
-      <p class="section-desc" style="font-size: 16px; margin: 0 auto 22px;">From routine preventative check-ups to complex specialist orthodontic and implant care.</p>
+      <p class="section-desc" style="font-size: 16px; margin: 0 auto 22px;">From everyday check-ups to specialist orthodontics and implant care — all in one place.</p>
       <a href="#treatments" class="btn-outline">View More Treatments</a>
     </div>
 
@@ -3109,7 +3373,7 @@
     <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 24px;">
       <div class="gold-badge" style="margin-bottom: 14px;">Real Transformations</div>
       <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px;">Interactive Smile Gallery</h2>
-      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Drag any card to reveal the before-and-after transformation.</p>
+      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Drag any photo to see the before-and-after for yourself.</p>
     </div>
 
     <!-- Category Filter -->
@@ -3453,7 +3717,7 @@
         </iframe>
         
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(205,224,213,0.15); border-radius: 20px; padding: 28px;">
-          <h3 style="font-family: 'Parisienne', 'Cormorant Garamond', cursive; font-weight: 400; font-size: 24px; color: var(--gold-light); margin-bottom: 16px;">Practice Details</h3>
+          <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-weight: 400; font-size: 24px; color: var(--gold-light); margin-bottom: 16px;">Practice Details</h3>
           <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15px; color: var(--sage-light);">
             <div style="display: flex; align-items: center; gap: 10px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -3482,7 +3746,7 @@
     <div class="footer-grid">
       <div>
         <a href="#" class="brand-logo" style="margin-bottom: 16px; display: inline-flex;">
-          <img src="woodlands-logo-white.webp" alt="Woodlands Centre for Dentistry" style="height: 170px; width: auto; display: block;">
+          <img src="woodlands-logo-transparent.webp" alt="Woodlands Centre for Dentistry" style="height: 170px; width: auto; display: block;">
         </a>
         <p style="font-size: 14px; color: var(--sage); line-height: 1.6; max-width: 280px;">
           A calm, caring specialist dental &amp; orthodontic practice in North Harrow dedicated to unhurried excellence.
