@@ -30,19 +30,11 @@
     <nav class="navbar" id="mainNavbar">
       <!-- Left: Nav Links -->
       <div class="navbar-left nav-links">
-        <div class="nav-item-dropdown">
-          <a href="javascript:void(0)" class="nav-link">Home <span class="nav-caret">▾</span></a>
-          <div class="nav-dropdown-menu">
-            <a href="index.html" class="nav-dropdown-link">Option 1</a>
-            <a href="option-2.html" class="nav-dropdown-link">Option 2</a>
-            <a href="option-3.html" class="nav-dropdown-link">Option 3</a>
-            <a href="option-4.html" class="nav-dropdown-link">Option 4</a>
-          </div>
-        </div>
+        <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item-dropdown">
           <a href="javascript:void(0)" class="nav-link">About Us <span class="nav-caret">▾</span></a>
           <div class="nav-dropdown-menu">
-            <a href="javascript:void(0)" class="nav-dropdown-link">Why Choose Us</a>
+            <a href="why-choose-us.html" class="nav-dropdown-link">Why Choose Us</a>
             <a href="javascript:void(0)" class="nav-dropdown-link">Your Patient Journey</a>
             <a href="javascript:void(0)" class="nav-dropdown-link">Meet the Team</a>
             <a href="javascript:void(0)" class="nav-dropdown-link">Practice Gallery</a>
@@ -53,8 +45,8 @@
           <a href="javascript:void(0)" class="nav-link">Treatments <span class="nav-caret">▾</span></a>
           <div class="nav-dropdown-menu nav-dropdown-menu-wide-3">
             <div class="nav-dropdown-col">
-              <div class="nav-dropdown-group-label" style="border-top: none; margin-top: 0;">Dental Implants</div>
-              <a href="javascript:void(0)" class="nav-dropdown-link">Single Tooth Replacement</a>
+              <a href="dental-implants.html" class="nav-dropdown-group-label" style="border-top: none; margin-top: 0; text-decoration: none; cursor: pointer;">Dental Implants</a>
+              <a href="single-tooth-replacement.html" class="nav-dropdown-link">Single Tooth Replacement</a>
               <a href="javascript:void(0)" class="nav-dropdown-link">Multiple Implants</a>
               <a href="javascript:void(0)" class="nav-dropdown-link">Full-Arch Restorations</a>
               <a href="javascript:void(0)" class="nav-dropdown-link">Implant Consultations</a>
@@ -77,29 +69,8 @@
             </div>
           </div>
         </div>
-        <a href="javascript:void(0)" class="nav-link">Smile Gallery</a>
-        <a href="javascript:void(0)" class="nav-link">Referrals</a>
-      </div>
-
-      <!-- Center: Logo -->
-      <div class="navbar-center">
-        <a href="javascript:void(0)" class="brand-logo">
-          <img src="woodlands-logo-transparent.webp" alt="Woodlands Centre for Dentistry" style="height: 116px; width: auto; display: block; margin: 0;">
-        </a>
-      </div>
-
-      <!-- Right: Nav Links + CTA -->
-      <div class="navbar-right nav-actions">
-        <a href="javascript:void(0)" class="nav-link">Fees</a>
         <div class="nav-item-dropdown">
-          <a href="javascript:void(0)" class="nav-link">Patient Info <span class="nav-caret">▾</span></a>
-          <div class="nav-dropdown-menu">
-            <a href="javascript:void(0)" class="nav-dropdown-link">FAQs</a>
-            <a href="javascript:void(0)" class="nav-dropdown-link">Patient Resources</a>
-          </div>
-        </div>
-        <div class="nav-item-dropdown">
-          <a href="javascript:void(0)" class="nav-link nav-link-outline">Braces Treatment <span class="nav-caret">▾</span></a>
+          <a href="javascript:void(0)" class="nav-link">Braces Treatment <span class="nav-caret">▾</span></a>
           <div class="nav-dropdown-menu nav-dropdown-menu-wide">
             <div class="nav-dropdown-col">
               <div class="nav-dropdown-group-label" style="border-top: none; margin-top: 0;">Adult Orthodontics</div>
@@ -117,39 +88,107 @@
             </div>
           </div>
         </div>
-        <a href="javascript:void(0)" class="btn-primary btn-gold" style="color: var(--ivory); padding: 11px 24px; font-size: 13px;">Book Now</a>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="navbar-center">
+        <a href="javascript:void(0)" class="brand-logo">
+          <img src="woodlands-logo-transparent.webp" alt="Woodlands Centre for Dentistry" style="height: 116px; width: auto; display: block; margin: 0;">
+        </a>
+      </div>
+
+      <!-- Right: Nav Links + CTA -->
+      <div class="navbar-right nav-actions">
+        <a href="fees.html" class="nav-link">Fees</a>
+        <div class="nav-item-dropdown">
+          <a href="javascript:void(0)" class="nav-link">Patient Info <span class="nav-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="javascript:void(0)" class="nav-dropdown-link">FAQs</a>
+            <a href="javascript:void(0)" class="nav-dropdown-link">Patient Resources</a>
+          </div>
+        </div>
+        <a href="smile-gallery.html" class="nav-link">Smile Gallery</a>
+        <a href="referrals.html" class="nav-link">Referrals</a>
+        <a href="contact.html" class="btn-primary btn-gold" style="color: var(--ivory); padding: 11px 24px; font-size: 13px;">Book Now</a>
       </div>
       <!-- Mobile Hamburger -->
-      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" style="display:none;">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CFA555" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <button class="mobile-menu-toggle" id="mobileMenuToggleBtn" onclick="toggleMobileMenu()" aria-label="Open Navigation Menu" style="display:none;">
+        <svg class="mobile-menu-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CFA555" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg class="mobile-menu-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CFA555" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
       </button>
     </nav>
   </div>
 
-  <!-- Mobile Full-Screen Glass Navigation Drawer -->
+  <!-- Mobile Full-Screen Glass Navigation Drawer (mirrors desktop nav-dropdown-menu content) -->
   <div id="mobileNavDrawer" class="mobile-nav-drawer">
-    <button class="mobile-drawer-close" onclick="toggleMobileMenu()" aria-label="Close Menu">✕</button>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">Home</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">About Us</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">Treatments</a>
-    <span class="mobile-nav-link" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Dental Implants</span>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Composite Bonding</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Specialist Orthodontics</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Teeth Whitening</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Why Choose Us</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Your Patient Journey</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Practice Gallery</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Technology</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">Smile Gallery</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">Patient Info</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ FAQs</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Patient Resources</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()" style="font-size: 14px; padding-left: 16px; opacity: 0.75;">↳ Fees &amp; Plans</a>
-    <a href="javascript:void(0)" class="mobile-nav-link" onclick="toggleMobileMenu()">Contact Us</a>
-    
-    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 280px;">
-      <a href="javascript:void(0)" class="btn-primary btn-gold" onclick="toggleMobileMenu()" style="width: 100%; justify-content: center; font-size: 15px;">Book Consultation</a>
-      <a href="tel:02088665556" style="color: var(--sage-light); font-size: 14px; font-weight: 600; text-align: center; text-decoration: none;">Call 020 8866 5556</a>
+    <a href="index.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Home</a>
+
+    <div class="mobile-nav-group">
+      <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">About Us <span class="mobile-nav-caret">▾</span></a>
+      <div class="mobile-nav-submenu">
+        <a href="why-choose-us.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Why Choose Us</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Your Patient Journey</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Meet the Team</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Practice Gallery</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Technology</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-group">
+      <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">Treatments <span class="mobile-nav-caret">▾</span></a>
+      <div class="mobile-nav-submenu">
+        <a href="dental-implants.html" class="mobile-nav-sub-heading" onclick="toggleMobileMenu()" style="text-decoration: none; cursor: pointer;">Dental Implants</a>
+        <a href="single-tooth-replacement.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Single Tooth Replacement</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Multiple Implants</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Full-Arch Restorations</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Implant Consultations</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Smile Rehabilitation</a>
+        <div class="mobile-nav-sub-heading">Cosmetic Dentistry</div>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Composite Bonding</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Veneers</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Teeth Whitening</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Smile Makeovers</a>
+        <div class="mobile-nav-sub-heading">General &amp; Family Dentistry</div>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Routine Dental Care</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Hygiene Services</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Preventive Dentistry</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Children's Dentistry</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Emergency Appointments</a>
+      </div>
+    </div>
+
+    <div class="mobile-nav-group">
+      <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">Braces Treatment <span class="mobile-nav-caret">▾</span></a>
+      <div class="mobile-nav-submenu">
+        <div class="mobile-nav-sub-heading">Adult Orthodontics</div>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Fixed Braces</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Removable Braces</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Retainers</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Invisalign First</a>
+        <div class="mobile-nav-sub-heading">Children's Orthodontics</div>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Interceptive Treatment</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Functional Braces</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Removable Braces for Kids</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Invisalign for Teens</a>
+      </div>
+    </div>
+
+    <a href="fees.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Fees</a>
+
+    <div class="mobile-nav-group">
+      <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">Patient Info <span class="mobile-nav-caret">▾</span></a>
+      <div class="mobile-nav-submenu">
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">FAQs</a>
+        <a href="javascript:void(0)" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Patient Resources</a>
+      </div>
+    </div>
+
+    <a href="smile-gallery.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Smile Gallery</a>
+    <a href="referrals.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Referrals</a>
+
+    <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; max-width: 280px;">
+      <a href="contact.html" class="btn-primary btn-gold" onclick="toggleMobileMenu()" style="width: 100%; justify-content: center; font-size: 15px;">Book Consultation</a>
+      <a href="tel:02088665556" style="width: 100%; display: flex; align-items: center; justify-content: center; padding: 14px 30px; border-radius: 100px; background: transparent; border: 1.5px solid var(--gold-warm); color: var(--gold-warm); font-size: 15px; font-weight: 600; text-align: center; text-decoration: none; box-sizing: border-box;">Call 020 8866 5556</a>
     </div>
   </div>
 

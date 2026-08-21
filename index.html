@@ -62,6 +62,7 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
     background-color: var(--forest-dark);
     color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
@@ -69,6 +70,7 @@
 
   body {
     font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
     background: var(--ivory);
     margin: 0;
     overflow-x: hidden;
@@ -1927,6 +1929,29 @@
     color: var(--sage);
   }
 
+  select.form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CFA555' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 46px;
+  }
+
+  select.form-input option {
+    background: var(--forest-dark);
+    color: var(--ivory);
+  }
+
+  input[type='date'].form-input {
+    color-scheme: dark;
+  }
+
+  input[type='date'].form-input::-webkit-calendar-picker-indicator {
+    filter: invert(0.85) sepia(1) saturate(3) hue-rotate(0deg) brightness(1.1);
+    cursor: pointer;
+  }
+
   /* Patient Stories */
   .patient-video-card {
     position: relative;
@@ -2250,7 +2275,7 @@
     /* ── Ortho Heritage Feature ── */
     .ortho-heritage-section { padding: 60px 20px !important; }
     .ortho-heritage-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-    .ortho-heritage-grid img { width: 100% !important; height: 320px !important; }
+    .ortho-heritage-grid img { width: 100% !important; height: 480px !important; }
     .ortho-heritage-grid > div[style*="position: relative"] { max-width: 100%; overflow: visible; }
     .ortho-heritage-grid .invisalign-badge {
       bottom: -14px !important;
@@ -2280,7 +2305,7 @@
     }
     .navbar { display: flex; justify-content: space-between; padding: 6px 16px; border-radius: 0; border-left: none; border-right: none; border-top: none; }
     .navbar-center { padding: 0; }
-    .brand-logo img { height: 64px !important; margin: 0 !important; }
+    .brand-logo img { height: 82px !important; margin: 0 !important; }
     .nav-links { display: none; }
     .brand-sub, .brand-est { display: none; }
     .nav-actions { display: none !important; }
@@ -2424,6 +2449,7 @@
     /* ── Footer ── */
     .footer-section { padding: 48px 20px 32px; }
     .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid .brand-logo img { height: 210px !important; }
 
     /* ── Section title global shrink ── */
     .section-title { font-size: 26px !important; }
@@ -2458,13 +2484,15 @@
     background: rgba(10, 35, 28, 0.97);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    z-index: 99998;
+    z-index: 900;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 22px;
-    padding: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 150px 32px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     opacity: 0;
     visibility: hidden;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2477,7 +2505,7 @@
 
   .mobile-nav-link {
     font-family: 'Manrope', sans-serif;
-    font-size: 26px;
+    font-size: 19px;
     color: var(--ivory);
     text-decoration: none !important;
     transition: color 0.2s ease;
@@ -2485,6 +2513,61 @@
 
   .mobile-nav-link:hover {
     color: var(--gold-light);
+  }
+
+  .mobile-nav-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .mobile-nav-caret {
+    font-size: 13px;
+    display: inline-block;
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-nav-group.expanded .mobile-nav-caret {
+    transform: rotate(180deg);
+  }
+
+  .mobile-nav-submenu {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding-left: 14px;
+    transition: max-height 0.35s ease, margin 0.35s ease;
+  }
+
+  .mobile-nav-group.expanded .mobile-nav-submenu {
+    max-height: 2400px;
+    margin-top: 12px;
+  }
+
+  .mobile-nav-sublink {
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--ivory);
+    opacity: 0.75;
+    text-decoration: none !important;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .mobile-nav-sublink:hover {
+    color: var(--gold-light);
+    opacity: 1;
   }
 
   .mobile-drawer-close {
@@ -2653,6 +2736,19 @@
     height: 460px;
   }
 
+  .ba-real-photo-wrap {
+    position: relative;
+    height: 460px;
+  }
+
+  .ba-real-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--ivory);
+    display: block;
+  }
+
   .ba-card-tag {
     position: absolute;
     bottom: 24px;
@@ -2717,6 +2813,9 @@
     .ba-card .ba-slider {
       height: 340px;
     }
+    .ba-real-photo-wrap {
+      height: 340px;
+    }
   }
 
 
@@ -2726,6 +2825,15 @@
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
+    .whatsapp-float { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .whatsapp-float.wa-visible { opacity: 1; pointer-events: auto; }
+  }
+  /* Tablet gap fix: desktop nav overflows between 769px and ~1050px; switch to the mobile hamburger in this range too */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .nav-links { display: none !important; }
+    .nav-actions { display: none !important; }
+    .mobile-menu-toggle { display: flex !important; }
+    .top-announcement-ribbon { display: none !important; }
   }
 </style>
 </head>
@@ -2790,8 +2898,8 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
       Advanced Dentistry &bull; North Harrow, London
     </div>
-    <h1 class="hero-title" style="font-size: 34px; margin: 12px 0 14px;">Your Journey to a<br>Healthier, Happier Smile<br><span>at Woodlands.</span></h1>
-    <p style="font-size: 15px; font-weight: 300; color: var(--sage-light); line-height: 1.65; margin-bottom: 24px;">A friendly dental practice in North Harrow, where hospital-level expertise meets genuine warmth and unhurried, personal care.</p>
+    <h1 class="hero-title" style="font-size: 34px; margin: 12px 0 14px;">Trusted Dental Care in the <span>Heart of North Harrow.</span></h1>
+    <p style="font-size: 15px; font-weight: 300; color: var(--sage-light); line-height: 1.65; margin-bottom: 24px;">Woodlands Centre for Dentistry brings together orthodontic heritage and comprehensive private dental care in Harrow, delivered with care, precision and attention to detail.</p>
     <div style="display: flex; gap: 32px;">
       <div>
         <div style="font-size: 28px; font-weight: 700; color: var(--ivory); font-family: 'Manrope', sans-serif; line-height: 1;">4.9★</div>
@@ -2829,8 +2937,8 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
         Advanced Dentistry &bull; North Harrow, London
       </div>
-      <h1 class="hero-title">Your Journey to a<br>Healthier, Happier Smile<br><span style="display: block;">at Woodlands.</span></h1>
-      <p class="hero-subtitle">We're a friendly dental practice in North Harrow, blending hospital-level expertise with genuine warmth — so every visit feels calm, clear and unhurried.</p>
+      <h1 class="hero-title">Trusted Dental Care in the<br><span style="display: block;">Heart of North Harrow.</span></h1>
+      <p class="hero-subtitle">Woodlands Centre for Dentistry brings together orthodontic heritage and comprehensive private dental care in Harrow, delivered with care, precision and attention to detail.</p>
       
       <div class="hero-actions">
         <a href="#contact" class="btn-primary btn-gold" style="font-size: 16px;">
@@ -2911,10 +3019,10 @@
         <div class="gold-badge" style="margin-bottom: 18px;">A Woodlands Heritage</div>
         <h2 class="section-title" style="color: var(--forest-dark); font-size: 44px; margin-bottom: 20px;">Specialist Orthodontics, Since Day One</h2>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 16px;">
-          Long before "comprehensive dentistry" became part of our name, Woodlands was already known across North Harrow for one thing: excellent orthodontics. That's the reputation we were built on, and it's still what we care about most.
+          Woodlands Centre for Dentistry has cared for patients in North Harrow for more than four decades, building a patient family of over 15,000 people across generations. Long before "comprehensive dentistry" became part of who we are, Woodlands was already known across North Harrow for one thing: specialist orthodontics. That's the reputation we were built on, and it's still central to how we work today.
         </p>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 24px;">
-          As we've grown into a full dental centre, that heritage hasn't gone anywhere. Every brace, aligner and bite correction still follows the same specialist standard our patients have trusted for years. Dr Millen qualified in dentistry in Bristol in 1988, then trained in orthodontics at Guy's Hospital, gaining her Masters in Orthodontics and Membership from the Royal College of Surgeons. She's been Practice Principal since 2004, and was one of the first orthodontists in the UK trained in lingual orthodontics.
+          What began as a specialist orthodontic practice has grown into a comprehensive private dental practice in Harrow, offering the same considered, personalised care that has defined us from the start, now extended to meet a wider range of dental needs under one roof. Every brace, aligner, and bite correction still follows the same specialist standard our patients have trusted for years.
         </p>
         <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px;">
           <span style="padding: 8px 16px; border-radius: 100px; background: var(--cream); border: 1px solid rgba(212,175,55,0.3); font-size: 13px; font-weight: 600; color: var(--forest-dark);">Invisalign&reg;</span>
@@ -3261,7 +3369,7 @@
   <section id="treatments" class="marquee-section leaf-motif-right">
     <div class="section-header center" style="text-align: center; max-width: 900px; margin: 0 auto 48px; padding: 0 24px;">
       <div class="gold-badge" style="margin-bottom: 14px;">Comprehensive Services</div>
-      <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px; white-space: nowrap;">Every Treatment Under One Calm Roof</h2>
+      <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px;">Every Treatment Under One Calm Roof</h2>
       <p class="section-desc" style="font-size: 16px; margin: 0 auto 22px;">From everyday check-ups to specialist orthodontics and implant care — all in one place.</p>
       <a href="#treatments" class="btn-outline">View More Treatments</a>
     </div>
@@ -3348,7 +3456,7 @@
     <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 24px;">
       <div class="gold-badge" style="margin-bottom: 14px;">Real Transformations</div>
       <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px;">Interactive Smile Gallery</h2>
-      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Drag any photo to see the before-and-after for yourself.</p>
+      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Real before-and-after results from patients treated at Woodlands Centre for Dentistry.</p>
     </div>
 
     <!-- Category Filter -->
@@ -3356,230 +3464,87 @@
       <button class="ba-tab active" onclick="filterGallery(this, 'bonding')">Composite Bonding</button>
       <button class="ba-tab" onclick="filterGallery(this, 'whitening')">Teeth Whitening</button>
       <button class="ba-tab" onclick="filterGallery(this, 'implants')">Dental Implants</button>
-      <button class="ba-tab" onclick="filterGallery(this, 'aligners')">Clear Aligners</button>
+      <button class="ba-tab" onclick="filterGallery(this, 'hygiene')">Hygiene &amp; Airflow</button>
     </div>
 
-    <!-- Before / After Card Carousel -->
+    <!-- Before / After Real Case Gallery -->
     <div class="ba-carousel-outer">
       <div class="ba-carousel" id="ba-carousel">
+
         <div class="ba-card" data-category="bonding">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_748727671.webp" alt="After composite bonding transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1901975786.webp" alt="Before composite bonding transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-bonding-1.webp" alt="Composite bonding before and after result, lower arch, at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Composite Bonding</span>
           </div>
         </div>
 
         <div class="ba-card" data-category="bonding">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_748727671.webp" alt="After composite bonding transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1901975786.webp" alt="Before composite bonding transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-bonding-2.webp" alt="Composite bonding before and after result, upper arch, at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Composite Bonding</span>
           </div>
         </div>
 
         <div class="ba-card" data-category="bonding">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_748727671.webp" alt="After composite bonding transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1901975786.webp" alt="Before composite bonding transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-bonding-3.webp" alt="Composite bonding before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Composite Bonding</span>
           </div>
         </div>
 
         <div class="ba-card ba-card-hidden" data-category="whitening">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_540616761.webp" alt="After teeth whitening transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_430458359.webp" alt="Before teeth whitening transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-whitening-1.webp" alt="Professional teeth whitening before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Teeth Whitening</span>
           </div>
         </div>
 
         <div class="ba-card ba-card-hidden" data-category="whitening">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_540616761.webp" alt="After teeth whitening transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_430458359.webp" alt="Before teeth whitening transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-whitening-2.webp" alt="Professional teeth whitening before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Teeth Whitening</span>
           </div>
         </div>
 
         <div class="ba-card ba-card-hidden" data-category="whitening">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_540616761.webp" alt="After teeth whitening transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_430458359.webp" alt="Before teeth whitening transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-whitening-3.webp" alt="Professional teeth whitening before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Teeth Whitening</span>
           </div>
         </div>
 
         <div class="ba-card ba-card-hidden" data-category="implants">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_514774108.webp" alt="After dental implant restoration transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_33367206.webp" alt="Before dental implant restoration transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-implants-2.webp" alt="Dental implant before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
             <span class="ba-card-tag">Dental Implants</span>
           </div>
         </div>
 
-        <div class="ba-card ba-card-hidden" data-category="implants">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_514774108.webp" alt="After dental implant restoration transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_33367206.webp" alt="Before dental implant restoration transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
-            <span class="ba-card-tag">Dental Implants</span>
+        <div class="ba-card ba-card-hidden" data-category="hygiene">
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-hygiene-1.webp" alt="Hygiene and airflow stain removal before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
+            <span class="ba-card-tag">Hygiene &amp; Airflow</span>
           </div>
         </div>
 
-        <div class="ba-card ba-card-hidden" data-category="implants">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_514774108.webp" alt="After dental implant restoration transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_33367206.webp" alt="Before dental implant restoration transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
-            <span class="ba-card-tag">Dental Implants</span>
+        <div class="ba-card ba-card-hidden" data-category="hygiene">
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-hygiene-2.webp" alt="Hygiene and airflow stain removal before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
+            <span class="ba-card-tag">Hygiene &amp; Airflow</span>
           </div>
         </div>
 
-        <div class="ba-card ba-card-hidden" data-category="aligners">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_56438402.webp" alt="After clear aligners transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1932956731.webp" alt="Before clear aligners transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
-            <span class="ba-card-tag">Clear Aligners</span>
+        <div class="ba-card ba-card-hidden" data-category="hygiene">
+          <div class="ba-real-photo-wrap">
+            <img src="./gallery-hygiene-3.webp" alt="Hygiene and airflow stain removal before and after result at Woodlands Centre for Dentistry" class="ba-real-photo">
+            <span class="ba-card-tag">Hygiene &amp; Airflow</span>
           </div>
         </div>
 
-        <div class="ba-card ba-card-hidden" data-category="aligners">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_56438402.webp" alt="After clear aligners transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1932956731.webp" alt="Before clear aligners transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
-            <span class="ba-card-tag">Clear Aligners</span>
-          </div>
-        </div>
-
-        <div class="ba-card ba-card-hidden" data-category="aligners">
-          <div class="ba-slider">
-            <div class="ba-after-image">
-              <img src="./AdobeStock_56438402.webp" alt="After clear aligners transformation">
-              <span class="ba-label after-label">AFTER</span>
-            </div>
-            <div class="ba-before-image" style="width: 50%;">
-              <img src="./AdobeStock_1932956731.webp" alt="Before clear aligners transformation">
-              <span class="ba-label before-label">BEFORE</span>
-            </div>
-            <input type="range" min="0" max="100" value="50" class="ba-range-slider" oninput="updateBASlider(this)" aria-label="Drag to compare before and after">
-            <div class="ba-handle-line" style="left: 50%;">
-              <div class="ba-handle-circle">↔</div>
-            </div>
-            <span class="ba-card-tag">Clear Aligners</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Fees Section -->
   <!-- FAQ Section -->
@@ -3593,31 +3558,31 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          <span>Do I need a referral to see Dr. Sowjanya?</span>
+          <span>Are you accepting new patients at your North Harrow dental practice?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>No referral is necessary. You can book a consultation directly with us for both general and specialist orthodontic care, whether you're a new or existing patient.</p>
+          <p>Yes, Woodlands Centre for Dentistry welcomes new patients. Simply get in touch to arrange an initial consultation and discuss your dental care needs.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          <span>Are you accepting new patients?</span>
+          <span>Do you offer orthodontic treatment at your North Harrow dental practice?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Yes, we welcome new patients of all ages. Simply call the practice or fill in the contact form above and our reception team will arrange your first appointment.</p>
+          <p>Yes. Orthodontics has been part of our practice for many years, and our dental practice in Harrow offers children's and adult orthodontics, including fixed braces, clear aligners, and Invisalign.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          <span>What should I expect at my first visit?</span>
+          <span>Do you treat children as well as adults?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Your first visit includes a full examination, a discussion of your goals and concerns, and where appropriate, digital 3D CBCT scans to help plan the most predictable treatment path.</p>
+          <p>Yes, our North Harrow practice welcomes patients of all ages, and we can arrange appointments so children and parents are seen together where possible.</p>
         </div>
       </div>
 
@@ -3633,21 +3598,21 @@
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          <span>Do you offer emergency appointments?</span>
+          <span>What if I haven't been to the dentist in a while?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Yes, we offer same-day emergency appointments wherever possible. Call us on 020 8866 5556 and our team will fit you in as quickly as we can.</p>
+          <p>That's completely understandable, and you won't be judged. Our team at Woodlands Centre for Dentistry will take things at your pace and help you get back on track.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFAQ(this)">
-          <span>What payment and finance options are available?</span>
+          <span>Do you accept dental insurance?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>We accept card and bank payments, and offer flexible finance plans for longer treatments such as implants and orthodontics. Ask our reception team for details tailored to your treatment plan.</p>
+          <p>Please contact Woodlands Centre for Dentistry directly to discuss payment options and whether your dental insurance plan is applicable to your treatment.</p>
         </div>
       </div>
     </div>
@@ -3658,7 +3623,7 @@
     <div>
       <div class="gold-badge" style="margin-bottom: 14px;">Get In Touch</div>
       <h2 class="section-title" style="color: var(--ivory); font-size: 46px; margin-bottom: 14px;">Book Your Consultation</h2>
-      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 32px;">Fill in your details below and our friendly reception team will reach out to confirm your preferred time.</p>
+      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 32px;">Looking for a private dentist in Harrow? Fill in your details below, and our friendly reception team will reach out to confirm your preferred time.</p>
 
       <form onsubmit="event.preventDefault(); alert('Thank you! We will call you shortly.');">
         <div class="form-group">
@@ -3945,8 +3910,24 @@
 
   function toggleMobileMenu() {
     const drawer = document.getElementById('mobileNavDrawer');
+    const btn = document.getElementById('mobileMenuToggleBtn');
     if (drawer) {
       drawer.classList.toggle('active');
+      const isOpen = drawer.classList.contains('active');
+      if (btn) {
+        const openIcon = btn.querySelector('.mobile-menu-icon-open');
+        const closeIcon = btn.querySelector('.mobile-menu-icon-close');
+        if (openIcon) openIcon.style.display = isOpen ? 'none' : '';
+        if (closeIcon) closeIcon.style.display = isOpen ? '' : 'none';
+        btn.setAttribute('aria-label', isOpen ? 'Close Navigation Menu' : 'Open Navigation Menu');
+      }
+    }
+  }
+
+  function toggleMobileSubmenu(el) {
+    const group = el.closest('.mobile-nav-group');
+    if (group) {
+      group.classList.toggle('expanded');
     }
   }
 
@@ -4006,6 +3987,21 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();
+
+  // WhatsApp float: hidden on mobile until scrolled past the hero, so it never overlaps the hero heading
+  document.addEventListener('DOMContentLoaded', function() {
+    const waBtn = document.querySelector('.whatsapp-float');
+    if (!waBtn) return;
+    function onScroll() {
+      if (window.scrollY > 320) {
+        waBtn.classList.add('wa-visible');
+      } else {
+        waBtn.classList.remove('wa-visible');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
 
   function toggleFAQ(btn) {
     const item = btn.closest('.faq-item');
@@ -4092,10 +4088,10 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
       <span>Call Practice</span>
     </a>
-    <div class="mobile-cta-btn btn-book">
+    <a href="contact.html" class="mobile-cta-btn btn-book">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
       <span>Book Now</span>
-    </div>
+    </a>
   </div>
 
 </body>
