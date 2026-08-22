@@ -2726,6 +2726,7 @@
   }
 
   @media (max-width: 768px) {
+    .form-row-2col { grid-template-columns: 1fr !important; gap: 0 !important; }
     .top-utility-bar { display: none; }
     .navbar-wrapper {
       left: 0;
@@ -2765,22 +2766,14 @@
 
   @media (max-width: 768px) {
     #referral-type-tabs {
+      display: none !important;
+    }
+    #referral-type-tabs-mobile {
+      display: block !important;
       position: sticky !important;
       top: 78px !important;
       z-index: 500 !important;
-      background: var(--forest-dark) !important;
-      flex-wrap: nowrap !important;
-      justify-content: flex-start !important;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      padding: 14px 20px !important;
-      margin: 0 -20px 24px !important;
-      -webkit-mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
     }
-    #referral-type-tabs::-webkit-scrollbar { display: none; }
-    #referral-type-tabs .ba-tab { flex-shrink: 0; }
   }
 
   /* Tablet gap fix: desktop nav overflows between 769px and ~1050px; switch to the mobile hamburger in this range too */
@@ -2865,8 +2858,9 @@
   <section id="refer-a-patient" class="contact-section" style="display: block;">
     <div style="max-width: 900px; margin: 0 auto;">
       <div class="gold-badge" style="margin-bottom: 14px;">Refer a Patient</div>
-      <h2 class="section-title" style="color: var(--ivory); font-size: 46px; margin-bottom: 14px;">Send Us a Referral</h2>
-      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 24px;">Choose a referral type, then complete the form below with your patient's details. Our team will confirm receipt and arrange an initial consultation.</p>
+      <h2 class="section-title" style="color: var(--ivory); font-size: 46px; margin-bottom: 14px;">Refer a Patient to Woodlands Centre for Dentistry</h2>
+      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 8px;">Complete the form below and our team will contact the patient to arrange their appointment.</p>
+      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 24px;">Please provide as much relevant clinical information as possible to help us assess the referral appropriately.</p>
 
       <div id="referral-type-tabs" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
         <button type="button" class="ba-tab active" onclick="selectReferralType(this, 'Extractions')">Extractions</button>
@@ -2876,8 +2870,16 @@
         <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Other')">Other</button>
       </div>
 
+      <select id="referral-type-tabs-mobile" class="form-input" style="display: none; margin-bottom: 28px;" onchange="selectReferralType(null, this.value)">
+        <option value="Extractions">Extractions</option>
+        <option value="Dental Implants">Dental Implants</option>
+        <option value="Specialist Orthodontics">Specialist Orthodontics</option>
+        <option value="Complex Restorative Care">Complex Restorative Care</option>
+        <option value="Other">Other</option>
+      </select>
+
       <form onsubmit="event.preventDefault(); alert('Thank you! We will confirm receipt of this referral shortly.');">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
+        <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
           <div class="form-group">
             <input type="text" class="form-input" placeholder="Referring Practice Name *" required>
           </div>
@@ -2896,7 +2898,7 @@
           <input type="text" class="form-input" placeholder="Patient Full Name *" required>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
+        <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
           <div class="form-group">
             <input type="date" class="form-input" placeholder="Patient Date of Birth *" required>
           </div>
@@ -2909,7 +2911,7 @@
           <input type="text" class="form-input" placeholder="Patient Address *" required>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
+        <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
           <div class="form-group">
             <select id="referral-type-select" class="form-input" required onchange="selectReferralType(null, this.value)">
               <option value="" disabled>Reason for Referral *</option>
@@ -2936,7 +2938,7 @@
         </div>
 
         <div class="form-group">
-          <textarea class="form-input" style="height: 120px; resize: none;" placeholder="Clinical Notes / Reason for Referral *" required></textarea>
+          <textarea class="form-input" style="height: 120px; resize: none;" placeholder="Clinical Notes / Additional Information *" required></textarea>
         </div>
 
         <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 28px;">
@@ -2945,7 +2947,7 @@
         </div>
 
         <button type="submit" class="btn-primary btn-gold form-submit-btn" style="justify-content: center; padding: 16px 32px; font-size: 16px;">
-          Send Referral →
+          Submit Referral →
         </button>
       </form>
     </div>
@@ -3287,9 +3289,9 @@
 <script>
   var referralTypeFields = {
     'Extractions': [
-      { type: 'select', label: 'Type of Extraction *', options: ['Simple Extraction', 'Surgical Extraction', 'Wisdom Tooth Removal', 'Multiple Extractions', 'Extraction Under Sedation'] },
+      { type: 'select', label: 'Type of Extraction *', options: ['Routine Extraction', 'Surgical Extraction', 'Complex Extraction', 'Not Sure / Please Assess'] },
       { placeholder: 'Tooth/Teeth to be Extracted *', type: 'text' },
-      { placeholder: 'Reason for Extraction (e.g. infection, fracture, impaction) *', type: 'text' }
+      { placeholder: 'Reason for Extraction / Relevant Findings *', type: 'text' }
     ],
     'Dental Implants': [
       { type: 'select', label: 'Type of Implant Treatment *', options: ['Single Tooth Implant', 'Multiple Implants', 'Full-Arch Restoration', 'Implant Consultation Only', 'Bone Grafting Required'] },
@@ -3337,6 +3339,8 @@
     }
     var select = document.getElementById('referral-type-select');
     if (select) select.value = type;
+    var mobileSelect = document.getElementById('referral-type-tabs-mobile');
+    if (mobileSelect) mobileSelect.value = type;
     renderDynamicFields(type);
   }
 
