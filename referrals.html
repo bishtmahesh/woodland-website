@@ -2770,9 +2770,6 @@
     }
     #referral-type-tabs-mobile {
       display: block !important;
-      position: sticky !important;
-      top: 78px !important;
-      z-index: 500 !important;
     }
   }
 
@@ -2814,6 +2811,15 @@
     </p>
     <h1 class="hero-title">Referrals</h1>
     <p class="hero-subtitle">Refer a patient to Woodlands Centre for Dentistry with confidence &mdash; specialist care, clear communication, and your patient returned to your practice.</p>
+
+    <select id="referral-type-tabs-mobile" class="form-input" style="display: none; margin-bottom: 18px;" onchange="selectReferralType(null, this.value)">
+      <option value="Extractions">Extractions</option>
+      <option value="Dental Implants">Dental Implants</option>
+      <option value="Specialist Orthodontics">Specialist Orthodontics</option>
+      <option value="Complex Restorative Care">Complex Restorative Care</option>
+      <option value="Other">Other</option>
+    </select>
+
     <div class="hero-actions">
       <a href="#refer-a-patient" class="btn-primary btn-gold" style="padding: 16px 36px; font-size: 16px;">
         Refer a Patient →
@@ -2869,14 +2875,6 @@
         <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Complex Restorative Care')">Complex Restorative Care</button>
         <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Other')">Other</button>
       </div>
-
-      <select id="referral-type-tabs-mobile" class="form-input" style="display: none; margin-bottom: 28px;" onchange="selectReferralType(null, this.value)">
-        <option value="Extractions">Extractions</option>
-        <option value="Dental Implants">Dental Implants</option>
-        <option value="Specialist Orthodontics">Specialist Orthodontics</option>
-        <option value="Complex Restorative Care">Complex Restorative Care</option>
-        <option value="Other">Other</option>
-      </select>
 
       <form onsubmit="event.preventDefault(); alert('Thank you! We will confirm receipt of this referral shortly.');">
         <div class="form-row-2col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px;">
