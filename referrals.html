@@ -1856,8 +1856,8 @@
 
   .form-input {
     width: 100%;
-    background: var(--cream);
-    border: 1px solid rgba(197, 160, 89, 0.35);
+    background: var(--ivory);
+    border: 1px solid rgba(10, 35, 28, 0.12);
     border-radius: 14px;
     padding: 16px 20px;
     font-family: inherit;
@@ -1865,6 +1865,7 @@
     color: var(--text-dark);
     outline: none;
     transition: var(--transition-fast);
+    box-shadow: 0 2px 8px rgba(10, 35, 28, 0.04);
   }
 
   .form-input:focus {
@@ -2745,15 +2746,15 @@
     .mobile-menu-toggle { display: flex !important; }
   }
 
-  /* Referral type tabs sit on the dark contact-section background */
+  /* Referral type tabs sit on the cream contact-section background */
   #referral-type-tabs .ba-tab {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(205, 224, 213, 0.25);
-    color: var(--ivory);
+    background: rgba(10, 35, 28, 0.04);
+    border: 1px solid rgba(10, 35, 28, 0.15);
+    color: var(--text-dark);
   }
 
   #referral-type-tabs .ba-tab:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(10, 35, 28, 0.08);
     border-color: var(--gold-warm);
   }
 
@@ -2854,12 +2855,12 @@
   </header>
 
   <!-- Contact & Appointment Booking Section -->
-  <section id="refer-a-patient" class="contact-section" style="display: block;">
+  <section id="refer-a-patient" class="contact-section" style="display: block; background: var(--cream); color: var(--text-dark);">
     <div style="max-width: 900px; margin: 0 auto;">
       <div class="gold-badge" style="margin-bottom: 14px;">Refer a Patient</div>
-      <h2 class="section-title" style="color: var(--ivory); font-size: 46px; margin-bottom: 14px;">Refer a Patient to Woodlands Centre for Dentistry</h2>
-      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 8px;">Complete the form below and our team will contact the patient to arrange their appointment.</p>
-      <p class="section-desc" style="color: var(--sage-light); font-size: 16px; margin-bottom: 24px;">Please provide as much relevant clinical information as possible to help us assess the referral appropriately.</p>
+      <h2 class="section-title" style="color: var(--forest-dark); font-size: 46px; margin-bottom: 14px;">Refer a Patient to Woodlands Centre for Dentistry</h2>
+      <p class="section-desc" style="color: var(--text-muted); font-size: 16px; margin-bottom: 8px;">Complete the form below and our team will contact the patient to arrange their appointment.</p>
+      <p class="section-desc" style="color: var(--text-muted); font-size: 16px; margin-bottom: 24px;">Please provide as much relevant clinical information as possible to help us assess the referral appropriately.</p>
 
       <div id="referral-type-tabs" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
         <button type="button" class="ba-tab active" onclick="selectReferralType(this, 'Extractions')">Extractions</button>
@@ -2934,7 +2935,7 @@
 
         <div class="form-group" style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 28px;">
           <input type="checkbox" id="referral-consent" required style="margin-top: 4px; width: 18px; height: 18px; flex-shrink: 0;">
-          <label for="referral-consent" style="font-size: 14px; color: var(--sage-light); line-height: 1.5;">I confirm the patient has consented to this referral and to their information being shared with Woodlands Centre for Dentistry for the purpose of this treatment. *</label>
+          <label for="referral-consent" style="font-size: 14px; color: var(--text-muted); line-height: 1.5;">I confirm the patient has consented to this referral and to their information being shared with Woodlands Centre for Dentistry for the purpose of this treatment. *</label>
         </div>
 
         <button type="submit" class="btn-primary btn-gold form-submit-btn" style="justify-content: center; padding: 16px 32px; font-size: 16px;">
