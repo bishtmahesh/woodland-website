@@ -2746,22 +2746,44 @@
   }
 
   /* Referral type tabs sit on the dark contact-section background */
-  #referral-type-tabs .ba-tab {
+  #referral-type-tabs .ba-tab,
+  #referral-type-tabs-mobile .ba-tab {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(205, 224, 213, 0.25);
     color: var(--ivory);
   }
 
-  #referral-type-tabs .ba-tab:hover {
+  #referral-type-tabs .ba-tab:hover,
+  #referral-type-tabs-mobile .ba-tab:hover {
     background: rgba(255, 255, 255, 0.12);
     border-color: var(--gold-warm);
   }
 
-  #referral-type-tabs .ba-tab.active {
+  #referral-type-tabs .ba-tab.active,
+  #referral-type-tabs-mobile .ba-tab.active {
     background: var(--gold-warm);
     color: var(--forest-dark);
     border-color: var(--gold-warm);
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  #referral-type-tabs-mobile {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+    background: var(--forest-dark);
+    padding: 10px 0;
+  }
+
+  #referral-type-tabs-mobile.is-stuck {
+    position: fixed;
+    top: 96px;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    padding: 10px 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
   }
 
   @media (max-width: 768px) {
@@ -2769,7 +2791,7 @@
       display: none !important;
     }
     #referral-type-tabs-mobile {
-      display: block !important;
+      display: flex !important;
     }
   }
 
@@ -2812,13 +2834,13 @@
     <h1 class="hero-title">Referrals</h1>
     <p class="hero-subtitle">Refer a patient to Woodlands Centre for Dentistry with confidence &mdash; specialist care, clear communication, and your patient returned to your practice.</p>
 
-    <select id="referral-type-tabs-mobile" class="form-input" style="display: none; margin-bottom: 18px;" onchange="selectReferralType(null, this.value)">
-      <option value="Extractions">Extractions</option>
-      <option value="Dental Implants">Dental Implants</option>
-      <option value="Specialist Orthodontics">Specialist Orthodontics</option>
-      <option value="Complex Restorative Care">Complex Restorative Care</option>
-      <option value="Other">Other</option>
-    </select>
+    <div id="referral-type-tabs-mobile">
+      <button type="button" class="ba-tab active" onclick="selectReferralType(this, 'Extractions')">Extractions</button>
+      <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Dental Implants')">Dental Implants</button>
+      <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Specialist Orthodontics')">Specialist Orthodontics</button>
+      <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Complex Restorative Care')">Complex Restorative Care</button>
+      <button type="button" class="ba-tab" onclick="selectReferralType(this, 'Other')">Other</button>
+    </div>
 
     <div class="hero-actions">
       <a href="#refer-a-patient" class="btn-primary btn-gold" style="padding: 16px 36px; font-size: 16px;">
@@ -3325,22 +3347,27 @@
   }
 
   function selectReferralType(el, type) {
-    if (el) {
-      document.querySelectorAll('#referral-type-tabs .ba-tab').forEach(function(tab) {
-        tab.classList.remove('active');
-      });
-      el.classList.add('active');
-    } else {
-      document.querySelectorAll('#referral-type-tabs .ba-tab').forEach(function(tab) {
-        tab.classList.toggle('active', tab.textContent.trim() === type);
-      });
-    }
+    document.querySelectorAll('#referral-type-tabs .ba-tab, #referral-type-tabs-mobile .ba-tab').forEach(function(tab) {
+      tab.classList.toggle('active', tab.textContent.trim() === type);
+    });
     var select = document.getElementById('referral-type-select');
     if (select) select.value = type;
-    var mobileSelect = document.getElementById('referral-type-tabs-mobile');
-    if (mobileSelect) mobileSelect.value = type;
     renderDynamicFields(type);
   }
+
+  (function() {
+    var mobileTabs = document.getElementById('referral-type-tabs-mobile');
+    if (!mobileTabs) return;
+    var anchor = document.createElement('div');
+    mobileTabs.parentNode.insertBefore(anchor, mobileTabs);
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth > 768) return;
+      var anchorTop = anchor.getBoundingClientRect().top;
+      var shouldStick = anchorTop < 96;
+      mobileTabs.classList.toggle('is-stuck', shouldStick);
+      anchor.style.height = shouldStick ? mobileTabs.offsetHeight + 'px' : '0';
+    }, { passive: true });
+  })();
 
   document.addEventListener('DOMContentLoaded', function() {
     renderDynamicFields('Extractions');
