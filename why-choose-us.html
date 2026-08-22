@@ -876,6 +876,10 @@
   }
 
   @media (max-width: 900px) {
+    .patient-relationships-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
     .process-section {
       padding: 60px 20px;
     }
@@ -2862,54 +2866,71 @@
     </div>
   </section>
 
-  <!-- Why Choose Us (bento grid, ported verbatim from index.html) -->
-  <section class="bento-section leaf-motif-left">
-    <div class="bento-header">
-      <h2 class="bento-header-title">Why Choose Us</h2>
-      <p class="bento-header-desc">A specialist team, more than 40 years of orthodontic heritage, and a personalised, unhurried approach &mdash; everything your smile needs to thrive.</p>
+  <!-- Orthodontic Heritage (process-tile grid) -->
+  <section class="process-section leaf-motif-right">
+    <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+      <div class="gold-badge" style="margin-bottom: 14px;">Our Heritage</div>
+      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">Built on a Long-Standing Orthodontic Heritage</h2>
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">Orthodontics has been part of Woodlands Centre for Dentistry for more than four decades. We provide orthodontic treatment for children, teenagers and adults &mdash; the appropriate treatment depends on the individual's dental health, orthodontic needs, age and treatment objectives.</p>
     </div>
 
-    <div class="bento-grid-modern">
-      <!-- Card 1 (Top Left, Primary Dark) -->
-      <div class="bento-card-modern primary">
-        <div>
-          <div class="bento-stat-num" style="color: #FFFDF9; margin-bottom: 8px;"><span class="count-up" data-target="98">98</span>%</div>
-          <div style="font-size: 16px; font-weight: 700; color: var(--gold-light); margin-bottom: 6px;">Gentle, Compassionate Care</div>
+    <div class="process-card">
+      <div class="process-grid">
+        <div class="process-tile">
+          <div class="process-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3 class="process-tile-title">Children's &amp; Adult Orthodontics</h3>
+          <p class="process-tile-desc">Orthodontic-led care for every age, from early assessment through to adult treatment.</p>
         </div>
-        <div style="font-size: 13.5px; color: var(--sage-light); line-height: 1.5;">At Woodlands, dentistry is never rushed. We take time to understand your goals and explain your options clearly.</div>
-      </div>
 
-      <!-- Card 2 (Top Middle, Light Card) -->
-      <div class="bento-card-modern">
-        <div>
-          <div class="bento-stat-num" style="color: var(--forest-dark); margin-bottom: 8px;"><span class="count-up" data-target="40">40</span>+</div>
-          <div style="font-size: 16px; font-weight: 700; color: var(--forest-dark); margin-bottom: 6px;">Years of Orthodontic Heritage</div>
+        <div class="process-tile">
+          <div class="process-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="7" rx="2"></rect><path d="M7 11V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"></path></svg>
+          </div>
+          <h3 class="process-tile-title">Fixed &amp; Removable Braces</h3>
+          <p class="process-tile-desc">Fixed braces and removable orthodontic appliances tailored to the individual's treatment plan.</p>
         </div>
-        <div style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">An established practice with a patient database of approximately 15,000 people built up in Harrow over four decades.</div>
-      </div>
 
-      <!-- Card 3 (Right Column, Tall Image) -->
-      <div style="grid-row: span 2; position: relative;">
-        <img src="./AdobeStock_223181186.webp" alt="Woodlands Specialist Dental Team" style="width: 100%; height: 100%; min-height: 440px; border-radius: 50% 50% 0 0; box-shadow: var(--shadow-sm); object-fit: cover;">
-      </div>
-
-      <!-- Card 4 (Bottom Left, Light Card) -->
-      <div class="bento-card-modern" style="justify-content: center; gap: 12px;">
-        <div style="font-size: 18px; font-weight: 700; color: var(--forest-dark); font-family: 'Manrope', sans-serif;">Advanced Diagnostic Tech</div>
-        <div style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Digital 3D CBCT scans, intraoral cameras, and microscopes support clearer communication &amp; predictable results.</div>
-      </div>
-
-      <!-- Card 5 (Bottom Middle, Quote Card) -->
-      <div class="bento-card-modern">
-        <div>
-          <div style="font-size: 16px; font-weight: 700; color: var(--forest-dark); margin-bottom: 8px;">Minimally Invasive Philosophy</div>
-          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5; margin: 0;">"Preserving natural tooth structure wherever possible for dentistry that feels considered, precise, and personal."</p>
+        <div class="process-image">
+          <img src="./AdobeStock_1932956731.webp" alt="Orthodontic treatment at Woodlands Centre for Dentistry" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
-        <div class="bento-divider" style="margin-top: 12px;"></div>
-        <div style="font-size: 13px; font-weight: 600; color: var(--forest-dark);">Dr. Sowjanya Avireddi, Principal Dentist</div>
+
+        <div class="process-tile">
+          <div class="process-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <h3 class="process-tile-title">Clear Aligners &amp; Invisalign</h3>
+          <p class="process-tile-desc">Discreet clear aligner treatment, including Invisalign, for patients who prefer a less visible option.</p>
+        </div>
+
+        <div class="process-tile">
+          <div class="process-tile-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          </div>
+          <h3 class="process-tile-title">Orthodontic-Led Care</h3>
+          <p class="process-tile-desc">An assessment allows our team to discuss the options available and explain the benefits and considerations of each.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Patient Relationships & Continuity -->
+  <section class="leaf-motif-left" style="padding: 100px 5%; background: var(--cream); width: 100%; box-sizing: border-box;">
+    <div class="section-header center" style="text-align: center; max-width: 720px; margin: 0 auto 40px;">
+      <div class="gold-badge" style="margin-bottom: 14px;">Our Patients</div>
+      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">A Practice Shaped by Long-Term Patient Relationships</h2>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;" class="patient-relationships-grid">
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
+        With approximately 15,000 patients in our established patient database, Woodlands Centre for Dentistry has cared for people across different stages of life. Some patients have continued their relationship with the practice for many years, while others have joined more recently. We recognise that patients may have different expectations, concerns and priorities when it comes to dental care, so we aim to create an environment where patients can discuss their concerns, ask questions and understand their treatment choices.
+      </p>
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
+        The development of Woodlands Centre for Dentistry means our relationship with patients can continue beyond orthodontic treatment. For patients who have previously attended the practice for orthodontic care, our wider range of dental services provides an opportunity to consider other aspects of their oral health within the same practice &mdash; and for new patients in Harrow, orthodontic care now forms part of a broader range of private dental services.
+      </p>
+    </div>
+  </section>
+
 
   <!-- Doctor Intro -->
   <section class="doctor-section leaf-motif-right">
