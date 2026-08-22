@@ -882,9 +882,13 @@
   }
 
   @media (max-width: 900px) {
-    .patient-relationships-grid {
+    .patient-relationships-grid,
+    .relationships-grid {
       grid-template-columns: 1fr !important;
       gap: 20px !important;
+    }
+    .relationships-image {
+      height: 240px !important;
     }
     .our-approach-grid {
       grid-template-columns: 1fr !important;
@@ -2923,47 +2927,31 @@
     </div>
   </section>
 
-  <!-- Patient Relationships & Continuity -->
+  <!-- Patient Relationships, Expansion & Communication (merged) -->
   <section class="leaf-motif-left" style="padding: 100px 5%; background: var(--cream); width: 100%; box-sizing: border-box;">
-    <div class="section-header center" style="text-align: center; max-width: 720px; margin: 0 auto 40px;">
-      <div class="gold-badge" style="margin-bottom: 14px;">Our Patients</div>
-      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">A Practice Shaped by Long-Term Patient Relationships</h2>
-    </div>
-    <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;" class="patient-relationships-grid">
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
-        With approximately 15,000 patients in our established patient database, Woodlands Centre for Dentistry has cared for people across different stages of life. Some patients have continued their relationship with the practice for many years, while others have joined more recently. We recognise that patients may have different expectations, concerns and priorities when it comes to dental care, so we aim to create an environment where patients can discuss their concerns, ask questions and understand their treatment choices.
-      </p>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
-        The development of Woodlands Centre for Dentistry means our relationship with patients can continue beyond orthodontic treatment. For patients who have previously attended the practice for orthodontic care, our wider range of dental services provides an opportunity to consider other aspects of their oral health within the same practice &mdash; and for new patients in Harrow, orthodontic care now forms part of a broader range of private dental services.
-      </p>
-    </div>
-  </section>
+    <div class="relationships-grid" style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center;">
+      <div class="relationships-image" style="border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); height: 420px;">
+        <img src="./AdobeStock_223181186.webp" alt="Dentist explaining treatment options to a patient at Woodlands Centre for Dentistry" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div>
+        <div class="gold-badge" style="margin-bottom: 14px;">Our Patients</div>
+        <h2 class="section-title" style="font-size: 34px; margin-bottom: 24px;">A Practice Shaped by Relationships, Growth &amp; Clear Communication</h2>
 
-  <!-- Expanding into Comprehensive Private Dentistry -->
-  <section class="leaf-motif-right" style="padding: 100px 5%; background: var(--ivory); width: 100%; box-sizing: border-box;">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="gold-badge" style="margin-bottom: 14px;">Looking Forward</div>
-      <h2 class="section-title" style="font-size: 38px; margin-bottom: 18px;">Expanding into Comprehensive Private Dentistry</h2>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7; margin-bottom: 18px;">
-        Woodlands Centre for Dentistry is continuing to develop its range of private dental services in Harrow. Our direction is to provide patients with access to a broader range of dental care while maintaining the established orthodontic foundation on which the practice was built.
-      </p>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
-        This includes supporting patients with different dental needs, from routine oral healthcare through to restorative, cosmetic and orthodontic treatments, depending on individual circumstances. Our approach is based on continuing the practice's development rather than replacing its history &mdash; the experience gained over more than 40 years remains part of the foundation of the practice as new services are introduced.
-      </p>
-    </div>
-  </section>
+        <div style="margin-bottom: 22px;">
+          <h3 class="process-tile-title" style="font-size: 18px; margin-bottom: 6px;">Long-Term Relationships</h3>
+          <p class="section-desc" style="font-size: 15px; line-height: 1.65;">With approximately 15,000 patients in our database, we've cared for people across every stage of life &mdash; creating an environment where patients can ask questions and understand their treatment choices.</p>
+        </div>
 
-  <!-- Care Based on Communication -->
-  <section class="leaf-motif-left" style="padding: 100px 5%; background: var(--cream); width: 100%; box-sizing: border-box;">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="gold-badge" style="margin-bottom: 14px;">How We Work</div>
-      <h2 class="section-title" style="font-size: 38px; margin-bottom: 18px;">Care Based on Communication</h2>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7; margin-bottom: 18px;">
-        We believe patients should have clear information about their dental care. Before treatment, we aim to discuss the relevant options, explain what treatment may involve and answer questions about the proposed care. Where appropriate, considerations such as potential risks, benefits, alternatives and costs can also be discussed.
-      </p>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
-        Not every treatment is suitable for every patient, so a clinical assessment is an important part of deciding whether a particular treatment is appropriate. This approach allows patients to participate in decisions about their dental care and consider the options available to them.
-      </p>
+        <div style="margin-bottom: 22px;">
+          <h3 class="process-tile-title" style="font-size: 18px; margin-bottom: 6px;">Expanding Private Dentistry</h3>
+          <p class="section-desc" style="font-size: 15px; line-height: 1.65;">We continue to develop our range of private dental services in Harrow, from routine oral healthcare through to restorative, cosmetic and orthodontic treatment &mdash; building on more than 40 years of experience.</p>
+        </div>
+
+        <div>
+          <h3 class="process-tile-title" style="font-size: 18px; margin-bottom: 6px;">Care Based on Communication</h3>
+          <p class="section-desc" style="font-size: 15px; line-height: 1.65;">Before treatment, we discuss the relevant options, explain what's involved and answer your questions &mdash; including risks, benefits, alternatives and costs where appropriate &mdash; so you can take part in decisions about your own care.</p>
+        </div>
+      </div>
     </div>
   </section>
 
