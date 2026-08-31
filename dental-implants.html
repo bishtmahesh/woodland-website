@@ -991,19 +991,31 @@
 
   .service-card {
     width: 380px;
-    height: 440px;
-    position: relative;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 16px 36px rgba(10,35,28,0.12);
-    border: 1px solid rgba(212,175,55,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: all 0.4s ease;
     flex-shrink: 0;
   }
 
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 24px 48px rgba(10,35,28,0.22), 0 0 25px rgba(212,175,55,0.25);
+  }
+
+  .service-card-circle {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 180px 180px 0 0;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(10,35,28,0.04);
+    border: 1px solid rgba(212,175,55,0.2);
+    transition: all 0.4s ease;
+  }
+
+  .service-card:hover .service-card-circle {
+    box-shadow: 0 8px 16px rgba(10,35,28,0.06), 0 0 10px rgba(212,175,55,0.07);
     border-color: var(--gold-warm);
   }
 
@@ -1020,41 +1032,26 @@
     transform: scale(1.08);
   }
 
-  .service-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(6, 23, 18, 0.96) 0%, rgba(10, 35, 28, 0.75) 45%, rgba(10, 35, 28, 0.2) 75%, transparent 100%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
   .service-card-body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 32px 28px;
-    z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 8px 0;
   }
 
   .service-card-title {
     font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
     font-size: 28px;
-    font-weight: 600;
-    color: #FFFDF9;
+    font-weight: 400;
+    color: var(--forest-dark);
     margin-bottom: 8px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
   }
 
   .service-card-desc {
     font-size: 14.5px;
-    color: var(--sage-light);
+    color: rgba(10,35,28,0.65);
     line-height: 1.55;
     margin-bottom: 16px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   }
 
   .service-card-cta {
@@ -1063,7 +1060,7 @@
     gap: 8px;
     font-size: 13px;
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--gold-warm);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transition: gap 0.3s ease;
@@ -1071,7 +1068,7 @@
 
   .service-card:hover .service-card-cta {
     gap: 12px;
-    color: #FFFDF9;
+    color: var(--forest-dark);
   }
 
   /* Technology Showcase */
@@ -2278,7 +2275,7 @@
   }
 
   .nav-dropdown-menu-wide { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 4px 14px !important; min-width: 440px !important; }
-  .nav-dropdown-menu-wide-3 { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 4px 14px !important; min-width: 620px !important; }
+  .nav-dropdown-menu-wide-3 { display: grid !important; grid-template-columns: 1fr 1fr 1fr !important; gap: 4px 20px !important; min-width: 720px !important; }
 
   .nav-dropdown-group-label {
     padding: 10px 14px 4px !important;
@@ -2289,6 +2286,7 @@
     color: var(--gold-warm) !important;
     border-top: 1px solid rgba(212,175,55,0.18) !important;
     margin-top: 4px !important;
+    white-space: nowrap !important;
   }
 
   .nav-dropdown-link {
@@ -2504,8 +2502,9 @@
 
     <div class="marquee-track">
       <div class="service-card">
-        <img src="./AdobeStock_223181186.webp" alt="Single-Tooth Implants" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_223181186.webp" alt="Single-Tooth Implants" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Single-Tooth Implants</h3>
           <p class="service-card-desc">One titanium post and crown to replace a single missing tooth, without touching its neighbours.</p>
@@ -2514,8 +2513,9 @@
       </div>
 
       <div class="service-card">
-        <img src="./AdobeStock_647094811.webp" alt="Implant-Supported Bridge" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_647094811.webp" alt="Implant-Supported Bridge" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Supported Bridge</h3>
           <p class="service-card-desc">Two or more implants anchor a fixed bridge, replacing several adjacent missing teeth at once.</p>
@@ -2524,8 +2524,9 @@
       </div>
 
       <div class="service-card">
-        <img src="./AdobeStock_540616761.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_2085747804.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Full-Arch (All-on-4)</h3>
           <p class="service-card-desc">A complete arch of teeth supported by as few as four strategically placed implants.</p>
@@ -2534,8 +2535,9 @@
       </div>
 
       <div class="service-card">
-        <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Retained Dentures</h3>
           <p class="service-card-desc">A removable denture that clips securely onto implants, ending the slipping and discomfort of traditional dentures.</p>
@@ -2545,8 +2547,9 @@
 
       <!-- Duplicates for continuous loop -->
       <div class="service-card" aria-hidden="true">
-        <img src="./AdobeStock_223181186.webp" alt="Single-Tooth Implants" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_223181186.webp" alt="Single-Tooth Implants" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Single-Tooth Implants</h3>
           <p class="service-card-desc">One titanium post and crown to replace a single missing tooth, without touching its neighbours.</p>
@@ -2555,8 +2558,9 @@
       </div>
 
       <div class="service-card" aria-hidden="true">
-        <img src="./AdobeStock_647094811.webp" alt="Implant-Supported Bridge" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_647094811.webp" alt="Implant-Supported Bridge" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Supported Bridge</h3>
           <p class="service-card-desc">Two or more implants anchor a fixed bridge, replacing several adjacent missing teeth at once.</p>
@@ -2565,8 +2569,9 @@
       </div>
 
       <div class="service-card" aria-hidden="true">
-        <img src="./AdobeStock_540616761.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_2085747804.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Full-Arch (All-on-4)</h3>
           <p class="service-card-desc">A complete arch of teeth supported by as few as four strategically placed implants.</p>
@@ -2575,8 +2580,9 @@
       </div>
 
       <div class="service-card" aria-hidden="true">
-        <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
-        <div class="service-card-overlay"></div>
+        <div class="service-card-circle">
+          <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
+        </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Retained Dentures</h3>
           <p class="service-card-desc">A removable denture that clips securely onto implants, ending the slipping and discomfort of traditional dentures.</p>
