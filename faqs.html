@@ -2521,11 +2521,27 @@
     min-width: 440px !important;
   }
 
-  .nav-dropdown-menu-wide-3 {
+  .nav-dropdown-menu-wide-3,
+  .nav-dropdown-menu-wide-4 {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 4px 20px;
+    left: 0 !important;
+    transform: translateX(0) translateY(8px) !important;
+  }
+
+  .nav-dropdown-menu-wide-3 {
+    grid-template-columns: 1fr 1fr 1fr;
     min-width: 720px !important;
+  }
+
+  .nav-dropdown-menu-wide-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-width: 940px !important;
+  }
+
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-3,
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-4 {
+    transform: translateX(0) translateY(0) !important;
   }
 
   .nav-dropdown-group-label {

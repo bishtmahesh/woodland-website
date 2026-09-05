@@ -2539,11 +2539,27 @@
     min-width: 440px !important;
   }
 
-  .nav-dropdown-menu-wide-3 {
+  .nav-dropdown-menu-wide-3,
+  .nav-dropdown-menu-wide-4 {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 4px 20px;
+    left: 0 !important;
+    transform: translateX(0) translateY(8px) !important;
+  }
+
+  .nav-dropdown-menu-wide-3 {
+    grid-template-columns: 1fr 1fr 1fr;
     min-width: 720px !important;
+  }
+
+  .nav-dropdown-menu-wide-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-width: 940px !important;
+  }
+
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-3,
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-4 {
+    transform: translateX(0) translateY(0) !important;
   }
 
   .nav-dropdown-group-label {
@@ -2760,7 +2776,7 @@
   <div class="mobile-hero-image">
     <div class="mobile-hero-slider">
       <div class="mobile-hero-slide active">
-        <img src="./doctor-millen.webp" alt="Portrait of Dr. Millen, Specialist Orthodontist" style="object-position: center top;">
+        <img src="./hero-1.webp" alt="Reception at Woodlands Centre for Dentistry" style="object-position: center top;">
       </div>
     </div>
   </div>
@@ -2791,7 +2807,7 @@
   <header class="hero-container">
     <div class="hero-slider-bg">
       <div class="hero-slide active">
-        <img src="./doctor-millen.webp" alt="Portrait of Dr. Millen, Specialist Orthodontist" style="object-position: center top;">
+        <img src="./hero-1.webp" alt="Reception at Woodlands Centre for Dentistry" style="object-position: center top;">
       </div>
     </div>
     <div class="hero-scrim"></div>
@@ -2819,6 +2835,40 @@
       </div>
     </div>
   </header>
+
+  <!-- Areas of Clinical Interest -->
+  <section class="doctor-section leaf-motif-right">
+    <div class="doctor-image-wrapper">
+      <div class="doctor-img-frame">
+        <img src="./doctor-millen.webp" alt="Portrait of Dr. Millen, Specialist Orthodontist" class="doctor-img">
+      </div>
+      <div class="doctor-badge-float">
+        <img src="https://img.icons8.com/color/48/medal.png" alt="Medal" style="width: 32px; height: 32px;">
+        <div>
+          <div style="font-size: 14px; font-weight: 700; color: var(--forest-dark);">Specialist Orthodontist</div>
+          <div style="font-size: 12px; color: var(--text-muted);">30+ Yrs Orthodontic Experience</div>
+        </div>
+      </div>
+    </div>
+    <div class="doctor-content-wrapper">
+      <div class="gold-badge">Specialist Orthodontist</div>
+      <h2 class="section-title" style="margin-top: 14px; font-size: 34px; margin-bottom: 12px;">Dr. Millen</h2>
+      <p class="section-desc" style="font-size: 15.5px; line-height: 1.7; margin-bottom: 24px; max-width: 640px;">Dr. Millen has been part of the orthodontic profession for more than three decades and brings extensive specialist experience to Woodlands, offering a comprehensive range of orthodontic treatment options for both adults and children.</p>
+      <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 22px; color: var(--forest-dark); margin-bottom: 14px;">Areas of Clinical Interest</h3>
+      <div class="clinical-interest-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
+        <span class="gold-badge">Invisalign&reg;</span>
+        <span class="gold-badge">Lingual Braces</span>
+        <span class="gold-badge">Fixed Braces</span>
+        <span class="gold-badge">Adult Orthodontics</span>
+        <span class="gold-badge">Children's Orthodontics</span>
+        <span class="gold-badge">ClearCorrect&reg;</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+        <a href="contact.html" class="btn-primary btn-gold" style="padding: 16px 32px; font-size: 15px;">Book Appointment</a>
+        <a href="meet-the-team.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">&larr; Back to the Team</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Bio / Intro -->
   <section id="about" class="leaf-motif-left" style="padding: 100px 5%; background: var(--ivory); width: 100%; box-sizing: border-box;">
@@ -2863,37 +2913,6 @@
     </div>
   </section>
 
-  <!-- Areas of Clinical Interest -->
-  <section class="doctor-section leaf-motif-right">
-    <div class="doctor-image-wrapper">
-      <div class="doctor-img-frame">
-        <img src="./doctor-millen.webp" alt="Portrait of Dr. Millen, Specialist Orthodontist" class="doctor-img">
-      </div>
-      <div class="doctor-badge-float">
-        <img src="https://img.icons8.com/color/48/medal.png" alt="Medal" style="width: 32px; height: 32px;">
-        <div>
-          <div style="font-size: 14px; font-weight: 700; color: var(--forest-dark);">Specialist Orthodontist</div>
-          <div style="font-size: 12px; color: var(--text-muted);">30+ Yrs Orthodontic Experience</div>
-        </div>
-      </div>
-    </div>
-    <div class="doctor-content-wrapper">
-      <div class="gold-badge">Specialist Orthodontist</div>
-      <h2 class="section-title" style="margin-top: 14px; font-size: 34px; margin-bottom: 20px;">Areas of Clinical Interest</h2>
-      <div class="clinical-interest-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
-        <span class="gold-badge">Invisalign&reg;</span>
-        <span class="gold-badge">Lingual Braces</span>
-        <span class="gold-badge">Fixed Braces</span>
-        <span class="gold-badge">Adult Orthodontics</span>
-        <span class="gold-badge">Children's Orthodontics</span>
-        <span class="gold-badge">ClearCorrect&reg;</span>
-      </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
-        <a href="contact.html" class="btn-primary btn-gold" style="padding: 16px 32px; font-size: 15px;">Book Appointment</a>
-        <a href="meet-the-team.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">&larr; Back to the Team</a>
-      </div>
-    </div>
-  </section>
 
   <!-- Patient Reviews -->
   <section class="reviews-marquee-section leaf-motif-right">
@@ -3117,6 +3136,7 @@
           <li><a href="dental-pain-relief.html" class="footer-link">Dental Pain Relief</a></li>
           <li><a href="emergency-infection-management.html" class="footer-link">Emergency Infection Management</a></li>
           <li><a href="trauma-broken-tooth-treatment.html" class="footer-link">Trauma &amp; Broken Tooth Treatment</a></li>
+          <li><a href="periodontal-gum-treatments.html" class="footer-link">Periodontal (Gum) Treatments</a></li>
         </ul>
       </div>
 

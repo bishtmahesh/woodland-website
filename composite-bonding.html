@@ -2624,11 +2624,27 @@
     min-width: 440px !important;
   }
 
-  .nav-dropdown-menu-wide-3 {
+  .nav-dropdown-menu-wide-3,
+  .nav-dropdown-menu-wide-4 {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 4px 20px;
+    left: 0 !important;
+    transform: translateX(0) translateY(8px) !important;
+  }
+
+  .nav-dropdown-menu-wide-3 {
+    grid-template-columns: 1fr 1fr 1fr;
     min-width: 720px !important;
+  }
+
+  .nav-dropdown-menu-wide-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-width: 940px !important;
+  }
+
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-3,
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-4 {
+    transform: translateX(0) translateY(0) !important;
   }
 
   .nav-dropdown-group-label {
@@ -3533,6 +3549,7 @@
           <li><a href="dental-pain-relief.html" class="footer-link">Dental Pain Relief</a></li>
           <li><a href="emergency-infection-management.html" class="footer-link">Emergency Infection Management</a></li>
           <li><a href="trauma-broken-tooth-treatment.html" class="footer-link">Trauma &amp; Broken Tooth Treatment</a></li>
+          <li><a href="periodontal-gum-treatments.html" class="footer-link">Periodontal (Gum) Treatments</a></li>
         </ul>
       </div>
 
