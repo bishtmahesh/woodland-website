@@ -1917,10 +1917,15 @@
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: 1.3fr repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 40px 32px;
     padding-bottom: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-grid > div:first-child {
+    grid-row: 1 / 3;
   }
 
   .footer-col-title {
@@ -2070,7 +2075,7 @@
     .doctor-section { grid-template-columns: 1fr; gap: 40px; }
     .tech-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .contact-section { grid-template-columns: 1fr; gap: 40px; }
-    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; gap: 32px; } .footer-grid > div:first-child { grid-row: auto; grid-column: 1 / -1; }
   }
 
   @media (max-width: 992px) {
@@ -2221,7 +2226,7 @@
 
     /* ── Footer ── */
     .footer-section { padding: 48px 20px 32px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 32px; } .footer-grid > div:first-child { grid-row: auto; grid-column: 1; }
     .footer-grid .brand-logo img { height: 210px !important; }
 
     /* ── Section title global shrink ── */
@@ -2511,6 +2516,8 @@
 
   .nav-item-dropdown {
     position: relative;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
   }
 
   .nav-item-dropdown:hover .nav-dropdown-menu {
@@ -2959,31 +2966,45 @@
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
-          <li><a href="index.html#contact" class="footer-link">Dentsply Sirona Treatment Centre</a></li>
-          <li><a href="index.html#contact" class="footer-link">3D CBCT Scanner</a></li>
-          <li><a href="index.html#contact" class="footer-link">Airflow Hygiene System</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
           <li><a href="index.html#contact" class="footer-link">Fees</a></li>
           <li><a href="index.html#faq" class="footer-link">FAQs</a></li>
-          <li><a href="index.html#about" class="footer-link">Patient Resources</a></li>
+          <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>
           <li><a href="contact.html" class="footer-link">Book Now</a></li>
         </ul>
       </div>
 
       <div>
-        <div class="footer-col-title">Orthodontics &amp; Implants</div>
+        <div class="footer-col-title">General &amp; Family Dentistry</div>
         <ul class="footer-links">
-          <li><a href="index.html#treatments" class="footer-link">Children's Braces</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Adult Braces</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Fixed &amp; Removable Appliances</a></li>
-          <li><a href="invisalign-comprehensive.html" class="footer-link">Invisalign Comprehensive</a></li>
-          <li><a href="invisalign-moderate.html" class="footer-link">Invisalign Moderate</a></li>
-          <li><a href="invisalign-lite.html" class="footer-link">Invisalign Lite</a></li>
-          <li><a href="invisalign-express-i7.html" class="footer-link">Invisalign Express &amp; i7</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Specialist-Led Orthodontic Care</a></li>
+          <li><a href="general-dentistry.html" class="footer-link">General Dentistry</a></li>
+          <li><a href="routine-dental-care.html" class="footer-link">Routine Dental Care</a></li>
+          <li><a href="hygiene-services.html" class="footer-link">Hygiene Services</a></li>
+          <li><a href="preventive-dentistry.html" class="footer-link">Preventive Dentistry</a></li>
+          <li><a href="childrens-dentistry.html" class="footer-link">Children's Dentistry</a></li>
+          <li><a href="emergency-appointments.html" class="footer-link">Emergency Appointments</a></li>
+          <li><a href="periodontal-gum-treatments.html" class="footer-link">Periodontal (Gum) Treatments</a></li>
+          <li><a href="root-canal-treatment.html" class="footer-link">Root Canal Treatment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Cosmetic Dentistry</div>
+        <ul class="footer-links">
+          <li><a href="composite-bonding.html" class="footer-link">Composite Bonding</a></li>
+          <li><a href="veneers.html" class="footer-link">Veneers</a></li>
+          <li><a href="teeth-whitening.html" class="footer-link">Teeth Whitening</a></li>
+          <li><a href="smile-makeovers.html" class="footer-link">Smile Makeovers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Dental Implants</div>
+        <ul class="footer-links">
+          <li><a href="dental-implants.html" class="footer-link">Dental Implants</a></li>
           <li><a href="single-tooth-replacement.html" class="footer-link">Single Tooth Replacement</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Multiple Implants</a></li>
+          <li><a href="multiple-implants.html" class="footer-link">Multiple Implants</a></li>
           <li><a href="full-arch-restorations.html" class="footer-link">Full-Arch Restorations</a></li>
           <li><a href="implant-consultations.html" class="footer-link">Implant Consultations</a></li>
           <li><a href="smile-rehabilitation.html" class="footer-link">Smile Rehabilitation</a></li>
@@ -2991,24 +3012,33 @@
       </div>
 
       <div>
-        <div class="footer-col-title">Cosmetic &amp; Family Dentistry</div>
+        <div class="footer-col-title">Facial Aesthetics</div>
         <ul class="footer-links">
-          <li><a href="composite-bonding.html" class="footer-link">Composite Bonding</a></li>
-          <li><a href="veneers.html" class="footer-link">Veneers</a></li>
-          <li><a href="teeth-whitening.html" class="footer-link">Teeth Whitening</a></li>
-          <li><a href="smile-makeovers.html" class="footer-link">Smile Makeovers</a></li>
-          <li><a href="routine-dental-care.html" class="footer-link">Routine Dental Care</a></li>
-          <li><a href="hygiene-services.html" class="footer-link">Hygiene Services</a></li>
-          <li><a href="preventive-dentistry.html" class="footer-link">Preventive Dentistry</a></li>
-          <li><a href="childrens-dentistry.html" class="footer-link">Children's Dentistry</a></li>
-          <li><a href="emergency-appointments.html" class="footer-link">Emergency Appointments</a></li>
-          <li><a href="dental-pain-relief.html" class="footer-link">Dental Pain Relief</a></li>
-          <li><a href="emergency-infection-management.html" class="footer-link">Emergency Infection Management</a></li>
-          <li><a href="trauma-broken-tooth-treatment.html" class="footer-link">Trauma &amp; Broken Tooth Treatment</a></li>
-          <li><a href="periodontal-gum-treatments.html" class="footer-link">Periodontal (Gum) Treatments</a></li>
+          <li><a href="anti-wrinkle-treatments.html" class="footer-link">Anti-Wrinkle Treatments</a></li>
+          <li><a href="dermal-fillers.html" class="footer-link">Dermal Fillers</a></li>
+          <li><a href="facial-rejuvenation.html" class="footer-link">Facial Rejuvenation</a></li>
         </ul>
       </div>
 
+      <div>
+        <div class="footer-col-title">Adult Orthodontics</div>
+        <ul class="footer-links">
+          <li><a href="fixed-braces.html" class="footer-link">Fixed Braces</a></li>
+          <li><a href="removable-braces.html" class="footer-link">Removable Braces</a></li>
+          <li><a href="retainers.html" class="footer-link">Retainers</a></li>
+          <li><a href="invisalign-first.html" class="footer-link">Invisalign First</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Children's Orthodontics</div>
+        <ul class="footer-links">
+          <li><a href="interceptive-treatment.html" class="footer-link">Interceptive Treatment</a></li>
+          <li><a href="functional-braces.html" class="footer-link">Functional Braces</a></li>
+          <li><a href="removable-braces-for-kids.html" class="footer-link">Removable Braces for Kids</a></li>
+          <li><a href="invisalign-for-teens.html" class="footer-link">Invisalign for Teens</a></li>
+        </ul>
+      </div>
       <div>
         <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
