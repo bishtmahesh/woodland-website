@@ -2094,14 +2094,12 @@
     .brand-sub, .brand-est { display: none; }
     .nav-actions { display: none !important; }
 
-    /* ── Mobile-only hero blocks (image + text separated, like the home page) ── */
-    .mobile-hero-image { display: block !important; margin-top: 78px; }
-    .mobile-hero-text  { display: block !important; }
-    .hero-container    { display: none !important; }
-    .mobile-hero-text .hero-title { font-size: 34px; margin: 12px 0 14px; }
-    .mobile-hero-text .hero-subtitle { font-size: 15px; margin-bottom: 24px; }
-    .mobile-hero-text .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; margin-bottom: 0; }
-    .mobile-hero-text .hero-actions a { width: 100%; box-sizing: border-box; justify-content: center; }
+    /* ── Unified centred hero (no separate mobile image/text split — image removed) ── */
+    .hero-container { margin-top: 0; min-height: unset !important; padding: 180px 24px 60px !important; }
+    .hero-content .hero-title { font-size: 34px; margin: 12px 0 14px; }
+    .hero-content .hero-subtitle { font-size: 15px; margin-bottom: 24px; }
+    .hero-content .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; margin-bottom: 0; }
+    .hero-content .hero-actions a { width: 100%; box-sizing: border-box; justify-content: center; }
 
     /* ── Trust banner ── */
     .trust-banner { flex-direction: column; align-items: flex-start; gap: 14px; padding: 24px 20px; }
@@ -2767,42 +2765,9 @@
   })();
   </script>
 
-  <!-- Mobile-only Hero: image block, separate from text (matches home page pattern) -->
-  <div class="mobile-hero-image">
-    <div class="mobile-hero-slider">
-      <div class="mobile-hero-slide active">
-        <img src="./AdobeStock_540616761.webp" alt="Contact Woodlands Centre for Dentistry" style="object-position: right top;">
-      </div>
-    </div>
-  </div>
-  <div class="mobile-hero-text">
-    <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; color: var(--sage-light); margin-bottom: 18px;">
-      <a href="index.html" style="color: var(--sage-light); text-decoration: none;">Home</a>
-      <span style="margin: 0 8px; color: var(--gold-light);">/</span>
-      <span style="color: var(--ivory);">Contact Us</span>
-    </p>
-    <h1 class="hero-title">Contact Us</h1>
-    <p class="hero-subtitle">We'd love to hear from you. Reach out to book a consultation or ask us anything &mdash; our friendly team is here to help.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary btn-gold" style="padding: 16px 36px; font-size: 16px;">
-        Send a Message →
-      </a>
-      <a href="tel:02088665556" class="btn-outline-light" style="padding: 16px 32px; font-size: 16px; display: inline-flex; align-items: center; gap: 8px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        Call 020 8866 5556
-      </a>
-    </div>
-  </div>
-
-  <!-- Page Hero (desktop) -->
-  <header class="hero-container">
-    <div class="hero-slider-bg">
-      <div class="hero-slide active">
-        <img src="./AdobeStock_540616761.webp" alt="Contact Woodlands Centre for Dentistry" style="object-position: right top;">
-      </div>
-    </div>
-    <div class="hero-scrim"></div>
-    <div class="hero-content">
+  <!-- Page Hero (image removed, text centred) -->
+  <header class="hero-container" style="min-height: 560px; padding-top: 200px; justify-content: flex-start;">
+    <div class="hero-content" style="max-width: 720px; margin: 0 auto; text-align: center;">
       <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; color: var(--sage-light); margin-bottom: 18px;">
         <a href="index.html" style="color: var(--sage-light); text-decoration: none;">Home</a>
         <span style="margin: 0 8px; color: var(--gold-light);">/</span>
@@ -2811,7 +2776,7 @@
       <h1 class="hero-title">Contact Us</h1>
       <p class="hero-subtitle">We'd love to hear from you. Reach out to book a consultation or ask us anything &mdash; our friendly team is here to help.</p>
 
-      <div class="hero-actions">
+      <div class="hero-actions" style="justify-content: center;">
         <a href="#contact" class="btn-primary btn-gold" style="padding: 16px 36px; font-size: 16px;">
           Send a Message →
         </a>
@@ -2979,7 +2944,7 @@
         <ul class="footer-links">
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
-          <li><a href="index.html#about" class="footer-link">Meet the Team</a></li>
+          <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="index.html#contact" class="footer-link">Dentsply Sirona Treatment Centre</a></li>
           <li><a href="index.html#contact" class="footer-link">3D CBCT Scanner</a></li>
           <li><a href="index.html#contact" class="footer-link">Airflow Hygiene System</a></li>
@@ -2998,28 +2963,34 @@
           <li><a href="index.html#treatments" class="footer-link">Children's Braces</a></li>
           <li><a href="index.html#treatments" class="footer-link">Adult Braces</a></li>
           <li><a href="index.html#treatments" class="footer-link">Fixed &amp; Removable Appliances</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Clear Aligners &amp; Invisalign</a></li>
+          <li><a href="invisalign-comprehensive.html" class="footer-link">Invisalign Comprehensive</a></li>
+          <li><a href="invisalign-moderate.html" class="footer-link">Invisalign Moderate</a></li>
+          <li><a href="invisalign-lite.html" class="footer-link">Invisalign Lite</a></li>
+          <li><a href="invisalign-express-i7.html" class="footer-link">Invisalign Express &amp; i7</a></li>
           <li><a href="index.html#treatments" class="footer-link">Specialist-Led Orthodontic Care</a></li>
           <li><a href="single-tooth-replacement.html" class="footer-link">Single Tooth Replacement</a></li>
           <li><a href="index.html#treatments" class="footer-link">Multiple Implants</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Full-Arch Restorations</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Implant Consultations</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Smile Rehabilitation</a></li>
+          <li><a href="full-arch-restorations.html" class="footer-link">Full-Arch Restorations</a></li>
+          <li><a href="implant-consultations.html" class="footer-link">Implant Consultations</a></li>
+          <li><a href="smile-rehabilitation.html" class="footer-link">Smile Rehabilitation</a></li>
         </ul>
       </div>
 
       <div>
         <div class="footer-col-title">Cosmetic &amp; Family Dentistry</div>
         <ul class="footer-links">
-          <li><a href="index.html#treatments" class="footer-link">Composite Bonding</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Veneers</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Teeth Whitening</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Smile Makeovers</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Routine Dental Care</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Hygiene Services</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Preventive Dentistry</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Children's Dentistry</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Emergency Appointments</a></li>
+          <li><a href="composite-bonding.html" class="footer-link">Composite Bonding</a></li>
+          <li><a href="veneers.html" class="footer-link">Veneers</a></li>
+          <li><a href="teeth-whitening.html" class="footer-link">Teeth Whitening</a></li>
+          <li><a href="smile-makeovers.html" class="footer-link">Smile Makeovers</a></li>
+          <li><a href="routine-dental-care.html" class="footer-link">Routine Dental Care</a></li>
+          <li><a href="hygiene-services.html" class="footer-link">Hygiene Services</a></li>
+          <li><a href="preventive-dentistry.html" class="footer-link">Preventive Dentistry</a></li>
+          <li><a href="childrens-dentistry.html" class="footer-link">Children's Dentistry</a></li>
+          <li><a href="emergency-appointments.html" class="footer-link">Emergency Appointments</a></li>
+          <li><a href="dental-pain-relief.html" class="footer-link">Dental Pain Relief</a></li>
+          <li><a href="emergency-infection-management.html" class="footer-link">Emergency Infection Management</a></li>
+          <li><a href="trauma-broken-tooth-treatment.html" class="footer-link">Trauma &amp; Broken Tooth Treatment</a></li>
         </ul>
       </div>
 

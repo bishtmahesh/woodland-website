@@ -2877,6 +2877,362 @@
     .nav-actions { display: none !important; }
     .mobile-menu-toggle { display: flex !important; }
   }
+
+  /* Fees & Plans — top-level section tabs */
+  .fees-section-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+
+  .fees-section-tabs .ba-tab {
+    font-size: 15.5px;
+    padding: 14px 32px;
+  }
+
+  .fees-tab-panel { display: none; }
+  .fees-tab-panel.active { display: block; }
+
+  @media (max-width: 640px) {
+    .fees-section-tabs { gap: 8px; margin-bottom: 36px; }
+    .fees-section-tabs .ba-tab { padding: 11px 20px; font-size: 14px; }
+  }
+
+  /* Membership Plans */
+  .plan-grid {
+    max-width: 1180px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 900px) {
+    .plan-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .plan-card {
+    position: relative;
+    background: var(--cream);
+    border: 1px solid rgba(10,35,28,0.1);
+    border-radius: 20px;
+    padding: 32px 26px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s ease;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold-warm);
+  }
+
+  .plan-card.featured {
+    background: var(--forest-dark);
+    border-color: var(--gold-warm);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .plan-ribbon {
+    position: absolute;
+    top: -13px;
+    left: 26px;
+    background: var(--gold-warm);
+    color: var(--forest-dark);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    box-shadow: 0 4px 10px rgba(197,160,89,0.4);
+  }
+
+  .plan-name {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--forest-dark);
+    margin-bottom: 6px;
+  }
+
+  .plan-card.featured .plan-name { color: var(--ivory); }
+
+  .plan-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 18px;
+    min-height: 40px;
+  }
+
+  .plan-card.featured .plan-desc { color: var(--sage-light); }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(10,35,28,0.1);
+  }
+
+  .plan-card.featured .plan-price { border-bottom-color: rgba(255,253,249,0.15); }
+
+  .plan-price-amount {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--forest-dark);
+  }
+
+  .plan-card.featured .plan-price-amount { color: var(--gold-light); }
+
+  .plan-price-period {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .plan-card.featured .plan-price-period { color: var(--sage-light); }
+
+  .plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px;
+    flex-grow: 1;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--forest-dark);
+    margin-bottom: 12px;
+  }
+
+  .plan-card.featured .plan-features li { color: var(--text-light); }
+
+  .plan-features li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--gold-warm);
+  }
+
+  .plan-cta {
+    display: block;
+    text-align: center;
+    padding: 13px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--forest-dark);
+    color: var(--gold-light);
+    transition: all 0.3s ease;
+  }
+
+  .plan-cta:hover { background: var(--forest); }
+
+  .plan-card.featured .plan-cta {
+    background: var(--gold-warm);
+    color: var(--forest-dark);
+  }
+
+  .plan-card.featured .plan-cta:hover { background: var(--gold); }
+
+  .plan-includes {
+    max-width: 980px;
+    margin: 0 auto;
+    background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.25);
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+
+  .plan-includes h4 {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--forest-dark);
+    margin: 0 0 16px;
+  }
+
+  .plan-includes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 12px;
+    column-gap: 24px;
+  }
+
+  .plan-includes-grid div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .plan-includes-grid svg {
+    flex-shrink: 0;
+    color: var(--gold-warm);
+  }
+
+  /* Patient Finance */
+  .finance-grid {
+    max-width: 1000px;
+    margin: 0 auto 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  .finance-card {
+    position: relative;
+    background: var(--cream);
+    border: 1px solid rgba(10,35,28,0.1);
+    border-radius: 20px;
+    padding: 30px 26px;
+  }
+
+  .finance-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    background: rgba(212,175,55,0.12);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .finance-card-title {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--forest-dark);
+    margin-bottom: 10px;
+  }
+
+  .finance-card-term {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest-dark);
+    margin-bottom: 4px;
+  }
+
+  .finance-card-apr {
+    font-size: 13.5px;
+    color: var(--gold-warm);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+
+  .finance-card-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .finance-steps {
+    max-width: 1000px;
+    margin: 0 auto 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+
+  .finance-step-num {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--gold-warm);
+    margin-bottom: 10px;
+  }
+
+  .finance-step-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--forest-dark);
+    margin-bottom: 6px;
+  }
+
+  .finance-step-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .finance-table-wrap {
+    max-width: 980px;
+    margin: 0 auto 40px;
+    overflow-x: auto;
+  }
+
+  .finance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--cream);
+    border: 1px solid rgba(10,35,28,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    min-width: 620px;
+  }
+
+  .finance-table th, .finance-table td {
+    padding: 14px 20px;
+    font-size: 14px;
+    text-align: right;
+    border-bottom: 1px solid rgba(10,35,28,0.08);
+    color: var(--forest-dark);
+  }
+
+  .finance-table th:first-child, .finance-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .finance-table thead th {
+    background: var(--forest-dark);
+    color: var(--gold-light);
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .finance-table tbody tr:last-child td { border-bottom: none; }
+  .finance-table tbody tr:hover { background: rgba(212,175,55,0.06); }
+
+  .finance-disclaimer {
+    max-width: 980px;
+    margin: 0 auto 56px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .finance-faq-heading {
+    text-align: center;
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--forest-dark);
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .plan-grid, .finance-grid, .finance-steps { grid-template-columns: 1fr; }
+    .plan-includes { padding: 22px 20px; }
+  }
 </style>
 </head>
 <body>
@@ -2952,10 +3308,18 @@
   <!-- Pricing -->
   <section id="pricing" class="pricing-section leaf-motif-left">
     <div class="pricing-intro">
-      <div class="gold-badge" style="margin-bottom: 14px;">Clear Pricing</div>
-      <h2 class="section-title" style="font-size: 40px; margin-bottom: 16px;">Transparent, Fair Pricing</h2>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">No hidden fees or surprises. Every fee below is a guide price &mdash; your dentist will confirm the exact cost for your treatment plan in writing before any work begins.</p>
+      <div class="gold-badge" style="margin-bottom: 14px;">No Surprises</div>
+      <h2 class="section-title" style="font-size: 40px; margin-bottom: 16px;">Fees &amp; Plans</h2>
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">Transparent pricing with no hidden costs. Browse our full fee list, explore membership plan savings, or find out how our flexible finance options can make your ideal treatment affordable.</p>
     </div>
+
+    <div class="fees-section-tabs" role="tablist" aria-label="Fees and plans sections">
+      <button type="button" class="ba-tab active" onclick="showFeesTab('fee-list', this)">Fee List</button>
+      <button type="button" class="ba-tab" onclick="showFeesTab('membership-plans', this)">Membership Plans</button>
+      <button type="button" class="ba-tab" onclick="showFeesTab('patient-finance', this)">Patient Finance</button>
+    </div>
+
+    <div id="fee-list" class="fees-tab-panel active">
 
     <div class="pricing-tabs">
       <a href="#price-examinations" class="ba-tab">Examinations</a>
@@ -3070,6 +3434,234 @@
         <strong>Cancellation Policy:</strong> Appointments require a minimum of 48 hours' notice. Deposits are non-refundable if less notice is given. Specialist appointments require a minimum of one week's notice. All prices are correct at time of publishing and may be subject to change following clinical assessment.
       </div>
     </div>
+
+    </div>
+    <!-- /#fee-list -->
+
+    <div id="membership-plans" class="fees-tab-panel">
+      <div class="pricing-intro" style="margin-bottom: 40px;">
+        <div class="gold-badge" style="margin-bottom: 14px;">Preventive First</div>
+        <h3 class="section-title" style="font-size: 30px; margin-bottom: 14px;">Dental Membership Plans</h3>
+        <p class="section-desc" style="font-size: 15.5px; line-height: 1.7;">Our membership plans are not insurance &mdash; they're a simple, direct way to spread the cost of your routine care and save on treatments. No waiting periods, no claim forms, no exclusions.</p>
+      </div>
+
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-name">Essential Smile</div>
+          <div class="plan-desc">Your core preventive dental care plan</div>
+          <div class="plan-price">
+            <span class="plan-price-amount">&pound;11.99</span>
+            <span class="plan-price-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 full dental examination per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 hygiene appointment with Airflow polishing per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>10% discount on eligible dental treatments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority reminders for routine appointments</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Join Now</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Complete Smile</div>
+          <div class="plan-desc">Everything in Essential, plus emergency cover</div>
+          <div class="plan-price">
+            <span class="plan-price-amount">&pound;14.99</span>
+            <span class="plan-price-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Everything in Essential Smile, plus:</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 emergency dental assessment per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority access for urgent appointments</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Join Now</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-ribbon">Most Popular</div>
+          <div class="plan-name">Premium Smile</div>
+          <div class="plan-desc">Enhanced preventive care for complete peace of mind</div>
+          <div class="plan-price">
+            <span class="plan-price-amount">&pound;19.99</span>
+            <span class="plan-price-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 full dental examinations per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 hygiene appointments with Airflow polishing per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 emergency dental assessment per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>10% discount on eligible dental treatments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority access to appointments</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Join Now</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Platinum Family Smile</div>
+          <div class="plan-desc">Comprehensive plan for individuals and small families</div>
+          <div class="plan-price">
+            <span class="plan-price-amount">&pound;24.99</span>
+            <span class="plan-price-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 full dental examinations per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 hygiene appointments with Airflow polishing per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 emergency dental assessment per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>10% discount on eligible dental treatments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Children under 12 join FREE (up to 2 children)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority access to appointments</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Join Now</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-ribbon" style="background: var(--forest-dark); color: var(--gold-light);">Best Value</div>
+          <div class="plan-name">Family Bundle Plan</div>
+          <div class="plan-desc">The complete family dental care solution</div>
+          <div class="plan-price">
+            <span class="plan-price-amount">&pound;45.99</span>
+            <span class="plan-price-period">/month</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Up to 2 adults covered</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 dental examinations per adult per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>2 Airflow hygiene appointments per adult per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>1 emergency dental assessment per adult per year</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>10% discount on eligible dental treatments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Children under 12 join FREE</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Covers up to 4 family members in total</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Single monthly payment for the whole family</li>
+          </ul>
+          <a href="contact.html" class="plan-cta">Join Now</a>
+        </div>
+      </div>
+
+      <div class="plan-includes">
+        <h4>All Membership Plans Include</h4>
+        <div class="plan-includes-grid">
+          <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Focus on prevention and oral health</div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Spread the cost with affordable monthly payments</div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Exclusive discounts on dental treatments</div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority access to appointments</div>
+          <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Professional care from our experienced team</div>
+        </div>
+      </div>
+    </div>
+    <!-- /#membership-plans -->
+
+    <div id="patient-finance" class="fees-tab-panel">
+      <div class="pricing-intro" style="margin-bottom: 40px;">
+        <div class="gold-badge" style="margin-bottom: 14px;">Flexible Payments</div>
+        <h3 class="section-title" style="font-size: 30px; margin-bottom: 14px;">Patient Finance</h3>
+        <p class="section-desc" style="font-size: 15.5px; line-height: 1.7;">We want cost to never be a barrier to the care you need. Our finance options let you spread payments into manageable monthly amounts &mdash; whether it's a single crown or a complete smile transformation.</p>
+      </div>
+
+      <div class="finance-grid">
+        <div class="finance-card">
+          <div class="finance-tag">Most Popular</div>
+          <div class="finance-card-title">0% Interest Finance</div>
+          <div class="finance-card-term">Up to 12 months</div>
+          <div class="finance-card-apr">0% APR</div>
+          <div class="finance-card-desc">Spread the cost of your treatment over 12 monthly payments with absolutely no interest added. Available on treatments from &pound;500.</div>
+        </div>
+        <div class="finance-card">
+          <div class="finance-tag">Flexible</div>
+          <div class="finance-card-title">Low-Rate Finance</div>
+          <div class="finance-card-term">24 &ndash; 60 months</div>
+          <div class="finance-card-apr">From 9.9% APR</div>
+          <div class="finance-card-desc">For larger treatment plans, spread the cost over up to 5 years with competitive interest rates. Ideal for implants, full makeovers, and orthodontics.</div>
+        </div>
+        <div class="finance-card">
+          <div class="finance-tag">Family</div>
+          <div class="finance-card-title">Family Finance</div>
+          <div class="finance-card-term">Flexible</div>
+          <div class="finance-card-apr">Combined plans</div>
+          <div class="finance-card-desc">Combine multiple family members' treatments into a single finance agreement. Simplify your payments while getting the whole family the care they need.</div>
+        </div>
+      </div>
+
+      <div class="finance-faq-heading">How It Works</div>
+      <div class="finance-steps">
+        <div>
+          <div class="finance-step-num">01</div>
+          <div class="finance-step-title">Free consultation</div>
+          <div class="finance-step-desc">Discuss your treatment plan and get a clear cost breakdown during your appointment.</div>
+        </div>
+        <div>
+          <div class="finance-step-num">02</div>
+          <div class="finance-step-title">Choose your plan</div>
+          <div class="finance-step-desc">Select 0% or low-APR finance to spread the cost over a term that suits your budget.</div>
+        </div>
+        <div>
+          <div class="finance-step-num">03</div>
+          <div class="finance-step-title">Quick application</div>
+          <div class="finance-step-desc">Complete a short online application &mdash; most patients receive a decision in minutes.</div>
+        </div>
+        <div>
+          <div class="finance-step-num">04</div>
+          <div class="finance-step-title">Start treatment</div>
+          <div class="finance-step-desc">Once approved, your treatment begins immediately with no hidden fees.</div>
+        </div>
+      </div>
+
+      <div class="finance-faq-heading">Example Monthly Payments</div>
+      <div class="finance-table-wrap">
+        <table class="finance-table">
+          <thead>
+            <tr><th>Treatment</th><th>Total Cost</th><th>0% / 12mo</th><th>9.9% / 24mo</th><th>9.9% / 48mo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single Dental Crown</td><td>&pound;695</td><td>&pound;57.92</td><td>&pound;32.19</td><td>&pound;17.52</td></tr>
+            <tr><td>Porcelain Veneers (4 teeth)</td><td>&pound;3,180</td><td>&pound;265.00</td><td>&pound;147.29</td><td>&pound;80.19</td></tr>
+            <tr><td>Dental Implant (full)</td><td>&pound;2,995</td><td>&pound;249.58</td><td>&pound;138.72</td><td>&pound;75.52</td></tr>
+            <tr><td>Invisalign Moderate</td><td>&pound;2,995</td><td>&pound;249.58</td><td>&pound;138.72</td><td>&pound;75.52</td></tr>
+            <tr><td>Full Smile Makeover</td><td>&pound;5,795</td><td>&mdash;</td><td>&pound;268.32</td><td>&pound;146.02</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="finance-disclaimer">Representative example: 9.9% APR. Monthly payments are illustrative only. Subject to status and credit approval. Finance provided by a third-party lender. Woodlands Centre for Dentistry is a credit broker, not a lender.</p>
+
+      <div class="finance-faq-heading">Finance FAQs</div>
+      <div class="faq-list" style="max-width: 780px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Is a credit check required?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, a standard credit check is carried out by our finance partner. Most patients with a reasonable credit history are approved. A soft search is performed first so there is no impact to your credit score if you do not proceed.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can I pay off my plan early?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. You can settle your balance early at any time with no early repayment penalty.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>What is the minimum amount I can finance?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Finance is available on treatments from &pound;500. For smaller amounts, we accept all major debit and credit cards, as well as interest-free monthly instalments for Membership Plan holders.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can I combine finance with a Membership Plan discount?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Your membership discount is applied to the treatment cost first, and you can then finance the remaining balance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#patient-finance -->
+
   </section>
 
   <!-- Contact & Appointment Booking Section -->
@@ -3226,7 +3818,7 @@
         <ul class="footer-links">
           <li><a href="index.html" class="footer-link">Home</a></li>
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
-          <li><a href="index.html#about" class="footer-link">Meet the Team</a></li>
+          <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="index.html#contact" class="footer-link">Dentsply Sirona Treatment Centre</a></li>
           <li><a href="index.html#contact" class="footer-link">3D CBCT Scanner</a></li>
           <li><a href="index.html#contact" class="footer-link">Airflow Hygiene System</a></li>
@@ -3245,28 +3837,34 @@
           <li><a href="index.html#treatments" class="footer-link">Children's Braces</a></li>
           <li><a href="index.html#treatments" class="footer-link">Adult Braces</a></li>
           <li><a href="index.html#treatments" class="footer-link">Fixed &amp; Removable Appliances</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Clear Aligners &amp; Invisalign</a></li>
+          <li><a href="invisalign-comprehensive.html" class="footer-link">Invisalign Comprehensive</a></li>
+          <li><a href="invisalign-moderate.html" class="footer-link">Invisalign Moderate</a></li>
+          <li><a href="invisalign-lite.html" class="footer-link">Invisalign Lite</a></li>
+          <li><a href="invisalign-express-i7.html" class="footer-link">Invisalign Express &amp; i7</a></li>
           <li><a href="index.html#treatments" class="footer-link">Specialist-Led Orthodontic Care</a></li>
           <li><a href="single-tooth-replacement.html" class="footer-link">Single Tooth Replacement</a></li>
           <li><a href="index.html#treatments" class="footer-link">Multiple Implants</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Full-Arch Restorations</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Implant Consultations</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Smile Rehabilitation</a></li>
+          <li><a href="full-arch-restorations.html" class="footer-link">Full-Arch Restorations</a></li>
+          <li><a href="implant-consultations.html" class="footer-link">Implant Consultations</a></li>
+          <li><a href="smile-rehabilitation.html" class="footer-link">Smile Rehabilitation</a></li>
         </ul>
       </div>
 
       <div>
         <div class="footer-col-title">Cosmetic &amp; Family Dentistry</div>
         <ul class="footer-links">
-          <li><a href="index.html#treatments" class="footer-link">Composite Bonding</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Veneers</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Teeth Whitening</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Smile Makeovers</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Routine Dental Care</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Hygiene Services</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Preventive Dentistry</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Children's Dentistry</a></li>
-          <li><a href="index.html#treatments" class="footer-link">Emergency Appointments</a></li>
+          <li><a href="composite-bonding.html" class="footer-link">Composite Bonding</a></li>
+          <li><a href="veneers.html" class="footer-link">Veneers</a></li>
+          <li><a href="teeth-whitening.html" class="footer-link">Teeth Whitening</a></li>
+          <li><a href="smile-makeovers.html" class="footer-link">Smile Makeovers</a></li>
+          <li><a href="routine-dental-care.html" class="footer-link">Routine Dental Care</a></li>
+          <li><a href="hygiene-services.html" class="footer-link">Hygiene Services</a></li>
+          <li><a href="preventive-dentistry.html" class="footer-link">Preventive Dentistry</a></li>
+          <li><a href="childrens-dentistry.html" class="footer-link">Children's Dentistry</a></li>
+          <li><a href="emergency-appointments.html" class="footer-link">Emergency Appointments</a></li>
+          <li><a href="dental-pain-relief.html" class="footer-link">Dental Pain Relief</a></li>
+          <li><a href="emergency-infection-management.html" class="footer-link">Emergency Infection Management</a></li>
+          <li><a href="trauma-broken-tooth-treatment.html" class="footer-link">Trauma &amp; Broken Tooth Treatment</a></li>
         </ul>
       </div>
 
@@ -3332,6 +3930,18 @@
     const group = el.closest('.mobile-nav-group');
     if (group) {
       group.classList.toggle('expanded');
+    }
+  }
+
+  function showFeesTab(panelId, btn) {
+    document.querySelectorAll('.fees-tab-panel').forEach(function(panel) {
+      panel.classList.toggle('active', panel.id === panelId);
+    });
+    if (btn) {
+      btn.closest('.fees-section-tabs').querySelectorAll('.ba-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+      btn.classList.add('active');
     }
   }
 
