@@ -1929,12 +1929,13 @@
   }
 
   .footer-col-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
     color: var(--gold-warm);
     margin-bottom: 20px;
+    white-space: nowrap;
   }
 
   .footer-links {
@@ -2151,8 +2152,8 @@
       line-height: 1.65 !important;
     }
     /* Specialty pills — compact on mobile */
-    .doctor-content-wrapper > div[style*="flex-wrap"] { max-width: 100% !important; gap: 5px !important; }
-    .doctor-content-wrapper span {
+    .doctor-content-wrapper > div[style*="flex-wrap"]:not(.clinical-interest-badges) { max-width: 100% !important; gap: 5px !important; }
+    .doctor-content-wrapper span:not(.gold-badge) {
       font-size: 10px !important;
       padding: 4px 8px !important;
       border-radius: 100px !important;
@@ -2162,7 +2163,7 @@
     }
 
     /* CTA buttons: stack vertically on mobile */
-    .doctor-content-wrapper > div[style*="flex-wrap: wrap"] {
+    .doctor-content-wrapper > div[style*="flex-wrap: wrap"]:not(.clinical-interest-badges) {
       flex-direction: column !important;
       gap: 12px !important;
     }
@@ -2877,7 +2878,7 @@
       </p>
 
       <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 22px; color: var(--forest-dark); margin-bottom: 12px;">Areas of Clinical Interest</h3>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
+      <div class="clinical-interest-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
         <span class="gold-badge">Dental Implants</span>
         <span class="gold-badge">Minimally Invasive Aesthetic Dentistry</span>
         <span class="gold-badge">Oral Surgery</span>
@@ -2888,7 +2889,7 @@
 
       <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
         <a href="contact.html" class="btn-primary btn-gold" style="padding: 16px 32px; font-size: 15px;">Book Appointment</a>
-        <a href="contact.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">Read More &rarr;</a>
+        <a href="dr-sowjanya-avireddi.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">Read More &rarr;</a>
       </div>
     </div>
   </section>
@@ -2918,7 +2919,7 @@
       </p>
 
       <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 22px; color: var(--forest-dark); margin-bottom: 12px;">Areas of Clinical Interest</h3>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
+      <div class="clinical-interest-badges" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; max-width: 640px;">
         <span class="gold-badge">Invisalign&reg;</span>
         <span class="gold-badge">Lingual Braces</span>
         <span class="gold-badge">Fixed Braces</span>
@@ -2929,7 +2930,7 @@
 
       <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
         <a href="contact.html" class="btn-primary btn-gold" style="padding: 16px 32px; font-size: 15px;">Book Appointment</a>
-        <a href="contact.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">Read More &rarr;</a>
+        <a href="dr-millen.html" style="font-size: 15px; font-weight: 700; color: var(--gold-warm); text-decoration: none;">Read More &rarr;</a>
       </div>
     </div>
   </section>
