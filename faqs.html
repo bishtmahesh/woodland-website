@@ -2765,7 +2765,7 @@
   <script>
   (function() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html', false);
+    xhr.open('GET', 'nav.html?v=2', false);
     xhr.send(null);
     if (xhr.status === 200 || xhr.status === 0) {
       document.getElementById('nav-include').outerHTML = xhr.responseText;
