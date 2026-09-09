@@ -2572,20 +2572,25 @@
   }
 
   .nav-dropdown-menu-wide-4 {
-    grid-template-columns: repeat(5, minmax(170px, 1fr));
-    gap: 4px 14px;
-    min-width: 1000px !important;
-    max-width: calc(100vw - 40px);
+    grid-template-columns: repeat(5, max-content);
+    gap: 4px 18px;
+    position: fixed !important;
+    top: 165px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(8px) !important;
   }
 
   .nav-dropdown-menu-wide-4 .nav-dropdown-link {
-    white-space: normal;
-    line-height: 1.25;
+    white-space: nowrap;
   }
 
   .nav-item-dropdown:hover .nav-dropdown-menu-wide-3,
   .nav-item-dropdown:hover .nav-dropdown-menu-wide-4 {
     transform: translateX(0) translateY(0) !important;
+  }
+
+  .nav-item-dropdown:hover .nav-dropdown-menu-wide-4 {
+    transform: translateX(-50%) translateY(0) !important;
   }
 
   .nav-dropdown-group-label {
