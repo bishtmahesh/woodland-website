@@ -2675,6 +2675,13 @@
     transform: translateX(-50%) translateY(0) !important;
   }
 
+  .nav-item-dropdown.mega-open .nav-dropdown-menu-wide-4 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
   .nav-dropdown-group-label {
     padding: 10px 14px 4px;
     font-size: 10.5px;
@@ -3646,6 +3653,19 @@
 
 </div>
 <script>
+  var __megaMenuCloseTimers = {};
+  function openMegaMenu(id) {
+    if (__megaMenuCloseTimers[id]) { clearTimeout(__megaMenuCloseTimers[id]); __megaMenuCloseTimers[id] = null; }
+    var el = document.getElementById(id);
+    if (el) el.classList.add('mega-open');
+  }
+  function scheduleCloseMegaMenu(id) {
+    __megaMenuCloseTimers[id] = setTimeout(function() {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('mega-open');
+    }, 250);
+  }
+
   function toggleMobileMenu() {
     const drawer = document.getElementById('mobileNavDrawer');
     const btn = document.getElementById('mobileMenuToggleBtn');

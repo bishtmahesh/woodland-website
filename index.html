@@ -520,6 +520,13 @@
     transform: translateX(-50%) translateY(0) !important;
   }
 
+  .nav-item-dropdown.mega-open .nav-dropdown-menu-wide-4 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
   .nav-dropdown-menu-wide-3 .nav-dropdown-col {
     display: flex;
     flex-direction: column;
@@ -4033,6 +4040,19 @@
     const card = carousel.querySelector('.ba-card:not(.ba-card-hidden)');
     const step = card ? card.offsetWidth + 32 : carousel.clientWidth * 0.8;
     carousel.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
+
+  var __megaMenuCloseTimers = {};
+  function openMegaMenu(id) {
+    if (__megaMenuCloseTimers[id]) { clearTimeout(__megaMenuCloseTimers[id]); __megaMenuCloseTimers[id] = null; }
+    var el = document.getElementById(id);
+    if (el) el.classList.add('mega-open');
+  }
+  function scheduleCloseMegaMenu(id) {
+    __megaMenuCloseTimers[id] = setTimeout(function() {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('mega-open');
+    }, 250);
   }
 
   function toggleMobileMenu() {
