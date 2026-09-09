@@ -2577,8 +2577,15 @@
   }
 
   .nav-dropdown-menu-wide-4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    min-width: 940px !important;
+    grid-template-columns: repeat(5, minmax(170px, 1fr));
+    gap: 4px 14px;
+    min-width: 1000px !important;
+    max-width: calc(100vw - 40px);
+  }
+
+  .nav-dropdown-menu-wide-4 .nav-dropdown-link {
+    white-space: normal;
+    line-height: 1.25;
   }
 
   .nav-item-dropdown:hover .nav-dropdown-menu-wide-3,
