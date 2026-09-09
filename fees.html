@@ -2574,7 +2574,6 @@
     grid-template-columns: repeat(5, max-content);
     gap: 4px 18px;
     position: fixed !important;
-    top: 165px !important;
     left: 50% !important;
     transform: translateX(-50%) translateY(8px) !important;
   }
@@ -3976,10 +3975,10 @@
     if (__megaMenuCloseTimers[id]) { clearTimeout(__megaMenuCloseTimers[id]); __megaMenuCloseTimers[id] = null; }
     var el = document.getElementById(id);
     if (el) el.classList.add('mega-open');
-    var navbarEl = document.getElementById('navbarWrapper');
+    var triggerEl = document.getElementById('treatmentsDropdownWrap');
     var menuEl = document.getElementById('treatmentsMegaMenu');
-    if (navbarEl && menuEl) {
-      menuEl.style.top = (navbarEl.getBoundingClientRect().bottom + 6) + 'px';
+    if (triggerEl && menuEl) {
+      menuEl.style.top = (triggerEl.querySelector('.nav-link').getBoundingClientRect().bottom + 6) + 'px';
     }
   }
   function scheduleCloseMegaMenu(id) {
