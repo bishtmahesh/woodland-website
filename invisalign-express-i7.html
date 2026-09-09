@@ -3671,6 +3671,11 @@
     if (__megaMenuCloseTimers[id]) { clearTimeout(__megaMenuCloseTimers[id]); __megaMenuCloseTimers[id] = null; }
     var el = document.getElementById(id);
     if (el) el.classList.add('mega-open');
+    var navbarEl = document.getElementById('navbarWrapper');
+    var menuEl = document.getElementById('treatmentsMegaMenu');
+    if (navbarEl && menuEl) {
+      menuEl.style.top = (navbarEl.getBoundingClientRect().bottom + 18) + 'px';
+    }
   }
   function scheduleCloseMegaMenu(id) {
     __megaMenuCloseTimers[id] = setTimeout(function() {
