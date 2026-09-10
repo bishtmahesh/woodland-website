@@ -2835,7 +2835,7 @@
   <script>
   (function() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=2', false);
+    xhr.open('GET', 'nav.html?v=3', false);
     xhr.send(null);
     if (xhr.status === 200 || xhr.status === 0) {
       document.getElementById('nav-include').outerHTML = xhr.responseText;
@@ -3291,7 +3291,10 @@
     var triggerEl = document.getElementById('treatmentsDropdownWrap');
     var menuEl = document.getElementById('treatmentsMegaMenu');
     if (triggerEl && menuEl) {
-      menuEl.style.top = (triggerEl.querySelector('.nav-link').getBoundingClientRect().bottom + 6) + 'px';
+      var navbarEl2 = document.getElementById('mainNavbar');
+      var navbarTop2 = navbarEl2 ? navbarEl2.getBoundingClientRect().top : 0;
+      var linkBottom2 = triggerEl.querySelector('.nav-link').getBoundingClientRect().bottom;
+      menuEl.style.top = (linkBottom2 - navbarTop2 + 22.5) + 'px';
     }
   }
   function scheduleCloseMegaMenu(id) {

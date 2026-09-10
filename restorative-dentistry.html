@@ -2876,7 +2876,7 @@
   <script>
   (function() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=2', false);
+    xhr.open('GET', 'nav.html?v=3', false);
     xhr.send(null);
     if (xhr.status === 200 || xhr.status === 0) {
       document.getElementById('nav-include').outerHTML = xhr.responseText;
@@ -2888,7 +2888,7 @@
   <div class="mobile-hero-image">
     <div class="mobile-hero-slider">
       <div class="mobile-hero-slide active">
-        <img src="./gallery-routine-hero.webp" alt="Restorative Dentistry at Woodlands Centre for Dentistry" style="object-position: center center;">
+        <img src="./restorative-dentistry-hero.webp" alt="Restorative Dentistry at Woodlands Centre for Dentistry" style="object-position: center center;">
       </div>
     </div>
   </div>
@@ -2921,7 +2921,7 @@
   <header class="hero-container">
     <div class="hero-slider-bg">
       <div class="hero-slide active">
-        <img src="./gallery-routine-hero.webp" alt="Restorative Dentistry at Woodlands Centre for Dentistry" style="object-position: center center;">
+        <img src="./restorative-dentistry-hero.webp" alt="Restorative Dentistry at Woodlands Centre for Dentistry" style="object-position: center center;">
       </div>
     </div>
     <div class="hero-scrim"></div>
@@ -3087,7 +3087,7 @@
         </div>
 
         <div class="process-image">
-          <img src="./gallery-routine-hero.webp" alt="Restorative dentistry at Woodlands Centre for Dentistry" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="./restorative-dentistry-hero.webp" alt="Restorative dentistry at Woodlands Centre for Dentistry" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
 
         <div class="process-tile">
@@ -3633,7 +3633,10 @@
     var triggerEl = document.getElementById('treatmentsDropdownWrap');
     var menuEl = document.getElementById('treatmentsMegaMenu');
     if (triggerEl && menuEl) {
-      menuEl.style.top = (triggerEl.querySelector('.nav-link').getBoundingClientRect().bottom + 6) + 'px';
+      var navbarEl2 = document.getElementById('mainNavbar');
+      var navbarTop2 = navbarEl2 ? navbarEl2.getBoundingClientRect().top : 0;
+      var linkBottom2 = triggerEl.querySelector('.nav-link').getBoundingClientRect().bottom;
+      menuEl.style.top = (linkBottom2 - navbarTop2 + 22.5) + 'px';
     }
   }
   function scheduleCloseMegaMenu(id) {
