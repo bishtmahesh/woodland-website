@@ -1899,6 +1899,62 @@
     cursor: pointer;
   }
 
+  /* Find Us */
+  .find-us-section {
+    padding: 100px 5%;
+    background: var(--ivory);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .find-us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+    width: 100%;
+  }
+
+  .find-us-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 36px 30px;
+    border: 1px solid rgba(10,35,28,0.06);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+  }
+
+  .find-us-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .find-us-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .find-us-card h3 {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--forest-dark);
+    margin-bottom: 10px;
+  }
+
+  .find-us-card p {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
   /* Footer */
   .footer-section {
     padding: 80px 5% 40px;
@@ -2220,6 +2276,11 @@
     .contact-section { grid-template-columns: 1fr; gap: 36px; padding: 56px 20px; }
     .form-input { font-size: 16px; } /* prevent iOS zoom */
     .form-submit-btn { width: 100%; }
+
+    /* ── Find Us ── */
+    .find-us-section { padding: 56px 20px; }
+    .find-us-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+    .find-us-card { padding: 24px 22px; }
 
     /* ── FAQ ── */
     .faq-section { padding: 56px 20px; }
@@ -2892,6 +2953,42 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Find Us Section -->
+  <section id="find-us" class="find-us-section">
+    <div class="section-header center" style="text-align: center; max-width: 720px; margin: 0 auto;">
+      <div class="gold-badge" style="margin-bottom: 14px;">Find Us</div>
+      <h2 class="section-title" style="font-size: 46px; margin-bottom: 14px;">Conveniently Located in North Harrow</h2>
+      <p class="section-desc" style="font-size: 16px; margin: 0 auto;">Woodlands Centre for Dentistry is conveniently located in HA2 6EW, serving patients and families across North Harrow, Pinner, Harrow, Rayners Lane, Eastcote, Ruislip, Hatch End, Stanmore and Edgware.</p>
+    </div>
+
+    <div class="find-us-grid">
+      <div class="find-us-card">
+        <div class="find-us-icon">🚗</div>
+        <h3>By Car</h3>
+        <p>Enjoy free on-site patient parking. Enter HA2 6EW into your sat-nav or use the Google Maps link above for door-to-door directions.</p>
+      </div>
+      <div class="find-us-card">
+        <div class="find-us-icon">🚇</div>
+        <h3>By Underground</h3>
+        <p>We are conveniently located near North Harrow and Pinner Underground Stations, both served by the Metropolitan Line.</p>
+      </div>
+      <div class="find-us-card">
+        <div class="find-us-icon">🚌</div>
+        <h3>By Bus</h3>
+        <p>Local routes including 183, H9, H10, H11, H18 and H19 provide convenient connections to the surrounding areas.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 36px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=106+Woodlands,+North+Harrow,+HA2+6EW" target="_blank" rel="noopener" class="btn-primary btn-gold" style="padding: 14px 28px; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">
+        📍 Find Us on Google Maps
+      </a>
+      <a href="https://www.waze.com/live-map/directions?to=ll.51.591643,-0.358246" target="_blank" rel="noopener" class="btn-outline-light" style="color: var(--forest-dark); border-color: rgba(10,35,28,0.25); padding: 14px 28px; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">
+        Open in Waze
+      </a>
     </div>
   </section>
 
