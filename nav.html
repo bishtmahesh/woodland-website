@@ -85,7 +85,7 @@
                     Dentures
                   </a>
                   <a href="laser-dentistry.html" class="nav-dropdown-link" style="display: flex !important; align-items: center; gap: 10px;">
-                    <img src="tech-media/laser-dentistry-thumb.webp" alt="" style="width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex-shrink: 0;">
+                    <img src="tech-media/laser-dentistry-thumb.webp?v=2" alt="" style="width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex-shrink: 0;">
                     Laser Dentistry &amp; Gum Treatments
                   </a>
                 </div>
@@ -190,13 +190,20 @@
       <!-- Center: Logo -->
       <div class="navbar-center">
         <a href="index.html" class="brand-logo">
-          <img src="woodlands-logo-transparent.webp" alt="Woodlands Centre for Dentistry" style="height: 116px; width: auto; display: block; margin: 0;">
+          <img src="woodlands-logo-transparent-v2.webp" alt="Woodlands Centre for Dentistry" style="height: 116px; width: auto; display: block; margin: 0;">
         </a>
       </div>
 
       <!-- Right: Nav Links + CTA -->
       <div class="navbar-right nav-actions">
-        <a href="fees.html" class="nav-link">Fees</a>
+        <div class="nav-item-dropdown">
+          <a href="javascript:void(0)" class="nav-link">Fees <span class="nav-caret">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="fee-list.html" class="nav-dropdown-link">Fee List</a>
+            <a href="membership-plans.html" class="nav-dropdown-link">Membership Plans</a>
+            <a href="patient-finance.html" class="nav-dropdown-link">Patient Finance</a>
+          </div>
+        </div>
         <div class="nav-item-dropdown">
           <a href="javascript:void(0)" class="nav-link">Patient Info <span class="nav-caret">▾</span></a>
           <div class="nav-dropdown-menu">
@@ -270,7 +277,7 @@
           Dentures
         </a>
         <a href="laser-dentistry.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()" style="display: flex !important; align-items: center; gap: 10px;">
-          <img src="tech-media/laser-dentistry-thumb.webp" alt="" style="width: 38px; height: 38px; border-radius: 9px; object-fit: cover; flex-shrink: 0;">
+          <img src="tech-media/laser-dentistry-thumb.webp?v=2" alt="" style="width: 38px; height: 38px; border-radius: 9px; object-fit: cover; flex-shrink: 0;">
           Laser Dentistry &amp; Gum Treatments
         </a>
         <div class="mobile-nav-sub-heading">Cosmetic Dentistry</div>
@@ -359,7 +366,14 @@
       </div>
     </div>
 
-    <a href="fees.html" class="mobile-nav-link" onclick="toggleMobileMenu()">Fees</a>
+    <div class="mobile-nav-group">
+      <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">Fees <span class="mobile-nav-caret">▾</span></a>
+      <div class="mobile-nav-submenu">
+        <a href="fee-list.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Fee List</a>
+        <a href="membership-plans.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Membership Plans</a>
+        <a href="patient-finance.html" class="mobile-nav-sublink" onclick="toggleMobileMenu()">Patient Finance</a>
+      </div>
+    </div>
 
     <div class="mobile-nav-group">
       <a href="javascript:void(0)" class="mobile-nav-link mobile-nav-toggle" onclick="toggleMobileSubmenu(this)">Patient Info <span class="mobile-nav-caret">▾</span></a>

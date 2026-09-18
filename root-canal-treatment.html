@@ -2881,16 +2881,7 @@
 <body>
 <div class="app-shell">
   <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- Mobile-only Hero: image block, separate from text (matches home page pattern) -->
   <div class="mobile-hero-image">
@@ -3069,17 +3060,13 @@
     <div class="process-card">
       <div class="process-grid">
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 5v2m0 10v2m7-7h-2M7 12H5m12.36-6.36l-1.42 1.42M7.06 16.94l-1.42 1.42m0-12.72l1.42 1.42m9.88 9.88l1.42 1.42"></path></svg>
-          </div>
+          <div class="process-tile-icon">01</div>
           <h3 class="process-tile-title">Assessment &amp; Imaging</h3>
           <p class="process-tile-desc">Your appointment begins with an assessment of the affected tooth and surrounding area. Digital imaging may be used where appropriate to help evaluate the roots and plan treatment.</p>
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"></path></svg>
-          </div>
+          <div class="process-tile-icon">02</div>
           <h3 class="process-tile-title">Numbing &amp; Access</h3>
           <p class="process-tile-desc">Once the tooth is comfortably numb, your dentist creates access to the inside of the tooth to reach the affected pulp tissue.</p>
         </div>
@@ -3089,17 +3076,13 @@
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-          </div>
+          <div class="process-tile-icon">03</div>
           <h3 class="process-tile-title">Cleaning &amp; Shaping</h3>
           <p class="process-tile-desc">The affected pulp tissue is removed, and the root canals are cleaned and shaped using specialised instruments.</p>
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-          </div>
+          <div class="process-tile-icon">04</div>
           <h3 class="process-tile-title">Filling, Sealing &amp; Restoration</h3>
           <p class="process-tile-desc">The canals are filled and sealed, with a temporary restoration placed if needed. Once the tooth has settled, a permanent filling or crown may be recommended.</p>
         </div>
@@ -3110,31 +3093,31 @@
   <!-- Your Patient Journey -->
   <section class="implant-journey-section leaf-motif-left">
     <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
-      <div class="gold-badge" style="margin-bottom: 14px;">Personalised to You</div>
-      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">Your Patient Journey: From Assessment to Restoration</h2>
-      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">If you have ongoing tooth pain, sensitivity, swelling or discomfort when biting, we take time to understand your concerns and explain what is involved before treatment begins.</p>
+      <div class="gold-badge" style="margin-bottom: 14px;">Aftercare</div>
+      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">Caring for Your Tooth After Root Canal Treatment</h2>
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">Following a few simple steps after treatment helps protect the tooth while it settles.</p>
     </div>
 
     <div class="implant-journey-grid">
       <div class="implant-journey-step">
         <div class="implant-journey-num">01</div>
-        <h3 class="implant-journey-title">Initial Consultation</h3>
-        <p class="implant-journey-desc">Your journey begins with understanding your symptoms and concerns about the affected tooth.</p>
+        <h3 class="implant-journey-title">Expect Some Tenderness</h3>
+        <p class="implant-journey-desc">Mild sensitivity or tenderness for a few days afterwards is common and usually settles on its own or with over-the-counter pain relief.</p>
       </div>
       <div class="implant-journey-step">
         <div class="implant-journey-num">02</div>
-        <h3 class="implant-journey-title">Assessment &amp; Digital Imaging</h3>
-        <p class="implant-journey-desc">Your dentist assesses the tooth and, where appropriate, uses digital imaging to help determine the cause of your symptoms.</p>
+        <h3 class="implant-journey-title">Avoid Chewing on the Tooth</h3>
+        <p class="implant-journey-desc">Until the tooth is permanently restored, avoid chewing on that side to reduce the risk of the temporary filling breaking or the tooth cracking.</p>
       </div>
       <div class="implant-journey-step">
         <div class="implant-journey-num">03</div>
-        <h3 class="implant-journey-title">Root Canal Procedure</h3>
-        <p class="implant-journey-desc">Using local anaesthesia and, where appropriate, high-end magnification loops, your dentist removes the affected pulp and cleans, shapes and seals the root canals.</p>
+        <h3 class="implant-journey-title">Attend Your Restoration Appointment</h3>
+        <p class="implant-journey-desc">A permanent filling or crown is needed to protect the tooth long-term, so it's important not to delay this follow-up appointment.</p>
       </div>
       <div class="implant-journey-step">
         <div class="implant-journey-num">04</div>
-        <h3 class="implant-journey-title">Follow-Up Restoration &amp; Review</h3>
-        <p class="implant-journey-desc">Once the tooth has settled, your dentist assesses the next stage of restoration, which may involve a permanent filling or crown.</p>
+        <h3 class="implant-journey-title">Watch for Ongoing Symptoms</h3>
+        <p class="implant-journey-desc">Contact the practice if you experience swelling, worsening pain or a return of your original symptoms after treatment.</p>
       </div>
     </div>
   </section>

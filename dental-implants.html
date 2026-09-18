@@ -2385,28 +2385,73 @@
     .nav-actions { display: none !important; }
     .mobile-menu-toggle { display: flex !important; }
   }
+
+  /* ── Dental Implant Patient Journey ── */
+  .implant-journey-section {
+    padding: 100px 5%;
+    background: var(--cream);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .implant-journey-grid {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+  }
+
+  .implant-journey-step {
+    position: relative;
+    padding-top: 28px;
+    border-top: 2px solid rgba(197, 160, 89, 0.3);
+  }
+
+  .implant-journey-num {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--gold-warm);
+    margin-bottom: 10px;
+  }
+
+  .implant-journey-title {
+    font-family: 'Bodoni Moda', 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--forest-dark);
+    margin-bottom: 8px;
+  }
+
+  .implant-journey-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .implant-journey-section {
+      padding: 60px 20px;
+    }
+    .implant-journey-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
 </style>
 </head>
 <body>
 <div class="app-shell">
 
 <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- Mobile-only Hero: image block, separate from text (matches home page pattern) -->
   <div class="mobile-hero-image">
     <div class="mobile-hero-slider">
       <div class="mobile-hero-slide active">
-        <img src="./AdobeStock_280864218.webp" alt="Dental Implants at Woodlands Centre for Dentistry" style="object-position: right center;">
+        <img src="./page-images/dental-implants-1.webp" alt="Dental Implants at Woodlands Centre for Dentistry" style="object-position: right center;">
       </div>
     </div>
   </div>
@@ -2439,7 +2484,7 @@
   <header class="hero-container">
     <div class="hero-slider-bg">
       <div class="hero-slide active">
-        <img src="./AdobeStock_280864218.webp" alt="Dental Implants at Woodlands Centre for Dentistry" style="object-position: right center;">
+        <img src="./page-images/dental-implants-1.webp" alt="Dental Implants at Woodlands Centre for Dentistry" style="object-position: right center;">
       </div>
     </div>
     <div class="hero-scrim"></div>
@@ -2536,7 +2581,7 @@
 
       <div class="service-card">
         <div class="service-card-circle">
-          <img src="./AdobeStock_2085747804.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
+          <img src="./page-images/dental-implants-2.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
         </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Full-Arch (All-on-4)</h3>
@@ -2547,7 +2592,7 @@
 
       <div class="service-card">
         <div class="service-card-circle">
-          <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
+          <img src="./page-images/dental-implants-3.webp" alt="Implant-Retained Dentures" class="service-card-img">
         </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Retained Dentures</h3>
@@ -2581,7 +2626,7 @@
 
       <div class="service-card" aria-hidden="true">
         <div class="service-card-circle">
-          <img src="./AdobeStock_2085747804.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
+          <img src="./page-images/dental-implants-2.webp" alt="Full-Arch All-on-4 Implants" class="service-card-img">
         </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Full-Arch (All-on-4)</h3>
@@ -2592,7 +2637,7 @@
 
       <div class="service-card" aria-hidden="true">
         <div class="service-card-circle">
-          <img src="./AdobeStock_56438402.webp" alt="Implant-Retained Dentures" class="service-card-img">
+          <img src="./page-images/dental-implants-3.webp" alt="Implant-Retained Dentures" class="service-card-img">
         </div>
         <div class="service-card-body">
           <h3 class="service-card-title">Implant-Retained Dentures</h3>
@@ -2645,6 +2690,38 @@
           <h3 class="tech-title">Built to Last</h3>
           <p class="tech-desc">With good hygiene and regular check-ups, implants are designed to last for decades.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment & Treatment Plan -->
+  <section class="implant-journey-section leaf-motif-right">
+    <div class="section-header center" style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
+      <div class="gold-badge" style="margin-bottom: 14px;">Appointment &amp; Treatment Plan</div>
+      <h2 class="section-title" style="font-size: 38px; margin-bottom: 16px;">What Does Implant Treatment Involve?</h2>
+      <p class="section-desc" style="font-size: 16px; line-height: 1.7;">Every implant treatment plan starts with a thorough assessment, so you know exactly what to expect at each stage.</p>
+    </div>
+
+    <div class="implant-journey-grid">
+      <div class="implant-journey-step">
+        <div class="implant-journey-num">01</div>
+        <h3 class="implant-journey-title">Consultation &amp; Assessment</h3>
+        <p class="implant-journey-desc">Your dentist examines your teeth, gums and jawbone, discusses your goals and explains whether implants are a suitable option for you.</p>
+      </div>
+      <div class="implant-journey-step">
+        <div class="implant-journey-num">02</div>
+        <h3 class="implant-journey-title">3D Planning</h3>
+        <p class="implant-journey-desc">A 3D CBCT scan and digital records are taken to plan the position of your implant or implants precisely around your individual anatomy.</p>
+      </div>
+      <div class="implant-journey-step">
+        <div class="implant-journey-num">03</div>
+        <h3 class="implant-journey-title">Implant Placement &amp; Healing</h3>
+        <p class="implant-journey-desc">The implant is placed into the jawbone under local anaesthetic, followed by a healing period during which it integrates with the bone.</p>
+      </div>
+      <div class="implant-journey-step">
+        <div class="implant-journey-num">04</div>
+        <h3 class="implant-journey-title">Restoration &amp; Review</h3>
+        <p class="implant-journey-desc">Once healed, your custom-made crown, bridge or denture is fitted, with review appointments to check the fit, bite and long-term health of the implant.</p>
       </div>
     </div>
   </section>

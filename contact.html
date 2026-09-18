@@ -2853,20 +2853,11 @@
     .mobile-menu-toggle { display: flex !important; }
   }
 </style>
-</head>
+<script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script></head>
 <body>
 <div class="app-shell">
   <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- Page Hero (image removed, text centred) -->
   <header class="hero-container" style="min-height: 560px; padding-top: 200px; justify-content: flex-start;">

@@ -2881,16 +2881,7 @@
 <body>
 <div class="app-shell">
   <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- Mobile-only Hero: image block, separate from text (matches home page pattern) -->
   <div class="mobile-hero-image">
@@ -3070,17 +3061,13 @@
     <div class="process-card">
       <div class="process-grid">
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 5v2m0 10v2m7-7h-2M7 12H5m12.36-6.36l-1.42 1.42M7.06 16.94l-1.42 1.42m0-12.72l1.42 1.42m9.88 9.88l1.42 1.42"></path></svg>
-          </div>
+          <div class="process-tile-icon">01</div>
           <h3 class="process-tile-title">Discussing Your Oral Health</h3>
           <p class="process-tile-desc">Your dentist will ask about any symptoms you have noticed, your dental history and your current oral hygiene routine.</p>
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"></path></svg>
-          </div>
+          <div class="process-tile-icon">02</div>
           <h3 class="process-tile-title">Examining Gums &amp; Teeth</h3>
           <p class="process-tile-desc">Your gums will be carefully assessed for inflammation, recession, bleeding and other signs of periodontal disease.</p>
         </div>
@@ -3090,17 +3077,13 @@
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
-          </div>
+          <div class="process-tile-icon">03</div>
           <h3 class="process-tile-title">Assessing Supporting Tissues</h3>
           <p class="process-tile-desc">Where appropriate, your dentist may assess gum pocket depths, tooth stability and other factors that indicate the health of the supporting structures.</p>
         </div>
 
         <div class="process-tile">
-          <div class="process-tile-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-          </div>
+          <div class="process-tile-icon">04</div>
           <h3 class="process-tile-title">Imaging &amp; Treatment Planning</h3>
           <p class="process-tile-desc">X-rays may be recommended where clinically appropriate. Once assessed, we explain our findings and recommend the most appropriate approach for you.</p>
         </div>

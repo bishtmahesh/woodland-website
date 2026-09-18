@@ -2898,16 +2898,7 @@
 <div class="app-shell">
 
 <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- ═══ MOBILE-ONLY HERO: Image Slider (Section 1) ═══ -->
   <div class="mobile-hero-image">
@@ -3218,8 +3209,8 @@
           <div style="font-size: 17px; font-weight: 700;">Watch the Story</div>
         </div>
       </div>
-      <div class="patient-video-card" onclick="openPatientVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPatientVideo(this);}" data-video-src="" data-video-title="Invisalign" data-video-poster="./AdobeStock_141987017.webp" role="button" tabindex="0" aria-label="Play Invisalign patient story video">
-        <img src="./AdobeStock_141987017.webp" alt="Smiling patient in the treatment chair">
+      <div class="patient-video-card" onclick="openPatientVideo(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPatientVideo(this);}" data-video-src="" data-video-title="Invisalign" data-video-poster="./page-images/home-1.webp" role="button" tabindex="0" aria-label="Play Invisalign patient story video">
+        <img src="./page-images/home-1.webp" alt="Smiling patient in the treatment chair">
         <div class="patient-video-overlay"></div>
         <div class="patient-video-play">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--forest-dark)"><path d="M8 5v14l11-7z"></path></svg>
@@ -3244,19 +3235,19 @@
 
     <div class="patient-ba-grid" style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
       <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
-        <img src="./AdobeStock_1901975786.webp" alt="Before composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <img src="./page-images/home-2.webp" alt="Before composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <span style="position: absolute; top: 10px; left: 10px; background: rgba(10,35,28,0.85); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">BEFORE</span>
       </div>
       <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
-        <img src="./AdobeStock_748727671.webp" alt="After composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <img src="./page-images/home-3.webp" alt="After composite bonding" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <span style="position: absolute; top: 10px; left: 10px; background: var(--gold-warm); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">AFTER</span>
       </div>
       <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
-        <img src="./AdobeStock_430458359.webp" alt="Before teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <img src="./page-images/home-4.webp" alt="Before teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <span style="position: absolute; top: 10px; left: 10px; background: rgba(10,35,28,0.85); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">BEFORE</span>
       </div>
       <div style="position: relative; border-radius: 14px; overflow: hidden; height: 160px;">
-        <img src="./AdobeStock_540616761.webp" alt="After teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <img src="./page-images/home-5.webp" alt="After teeth whitening" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         <span style="position: absolute; top: 10px; left: 10px; background: var(--gold-warm); color: var(--ivory); font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 100px;">AFTER</span>
       </div>
     </div>

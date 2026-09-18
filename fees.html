@@ -3280,22 +3280,13 @@
 <body>
 <div class="app-shell">
   <div id="nav-include"></div>
-  <script>
-  (function() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'nav.html?v=3', false);
-    xhr.send(null);
-    if (xhr.status === 200 || xhr.status === 0) {
-      document.getElementById('nav-include').outerHTML = xhr.responseText;
-    }
-  })();
-  </script>
+  <script src="nav-loader.js"></script>
 
   <!-- Mobile-only Hero: image block, separate from text (matches home page pattern) -->
   <div class="mobile-hero-image">
     <div class="mobile-hero-slider">
       <div class="mobile-hero-slide active">
-        <img src="./AdobeStock_386368085.webp" alt="Fees at Woodlands Centre for Dentistry" style="object-position: right center;">
+        <img src="./page-images/fees-1.webp" alt="Fees at Woodlands Centre for Dentistry" style="object-position: right center;">
       </div>
     </div>
   </div>
@@ -3322,7 +3313,7 @@
   <header class="hero-container">
     <div class="hero-slider-bg">
       <div class="hero-slide active">
-        <img src="./AdobeStock_386368085.webp" alt="Fees at Woodlands Centre for Dentistry" style="object-position: right center;">
+        <img src="./page-images/fees-1.webp" alt="Fees at Woodlands Centre for Dentistry" style="object-position: right center;">
       </div>
     </div>
     <div class="hero-scrim"></div>
