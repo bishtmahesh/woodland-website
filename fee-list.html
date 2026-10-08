@@ -2366,6 +2366,8 @@
   .whatsapp-float { bottom: 24px !important; }
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
+    /* Keep the footer clear of the fixed Call/Book bar */
+    .footer-section { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
   }
 
@@ -2893,24 +2895,55 @@
 
   @media (max-width: 768px) {
     .pricing-section.leaf-motif-left { overflow: visible; }
-    .pricing-tabs {
+    .pricing-tabs-wrap {
       position: sticky;
       top: 78px;
       z-index: 500;
       background: var(--ivory);
+      margin: 0 -20px 24px;
+    }
+    .pricing-tabs {
       flex-wrap: nowrap;
       justify-content: flex-start;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding: 14px 20px;
-      margin: 0 -20px 24px;
+      padding: 14px 44px;
+      margin: 0;
       gap: 8px;
+      scroll-padding: 0 44px;
       -webkit-mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
       mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
     }
     .pricing-tabs::-webkit-scrollbar { display: none; }
     .pricing-tabs .ba-tab { flex-shrink: 0; }
+    .pricing-tabs-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(10, 35, 28, 0.15);
+      background: var(--forest-dark);
+      color: var(--gold-light);
+      font-size: 22px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0 3px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(10, 35, 28, 0.2);
+    }
+    .pricing-tabs-arrow[hidden] { display: none; }
+    .pricing-tabs-arrow.prev { left: 6px; }
+    .pricing-tabs-arrow.next { right: 6px; }
+  }
+  .pricing-tabs-arrow { display: none; }
+  @media (max-width: 768px) {
+    .pricing-tabs-arrow:not([hidden]) { display: flex; }
   }
 
   /* Tablet gap fix: desktop nav overflows between 769px and ~1050px; switch to the mobile hamburger in this range too */
@@ -3348,7 +3381,9 @@
 
     <div id="fee-list" >
 
-    <div class="pricing-tabs">
+    <div class="pricing-tabs-wrap">
+    <button type="button" class="pricing-tabs-arrow prev" aria-label="Show previous fee categories" hidden>&lsaquo;</button>
+    <div class="pricing-tabs" aria-label="Fee categories">
       <a href="#price-examinations" class="ba-tab">Examinations</a>
       <a href="#price-general" class="ba-tab">General &amp; Family</a>
       <a href="#price-cosmetic" class="ba-tab">Cosmetic</a>
@@ -3356,6 +3391,8 @@
       <a href="#price-ortho" class="ba-tab">Orthodontics</a>
       <a href="#price-hygiene" class="ba-tab">Hygiene</a>
       <a href="#price-extractions" class="ba-tab">Extractions</a>
+    </div>
+    <button type="button" class="pricing-tabs-arrow next" aria-label="Show more fee categories" hidden>&rsaquo;</button>
     </div>
 
     <div class="pricing-grid">
@@ -3620,7 +3657,7 @@
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
-          <li><a href="index.html#contact" class="footer-link">Fees</a></li>
+          <li><a href="fee-list.html" class="footer-link">Fees</a></li>
           <li><a href="index.html#faq" class="footer-link">FAQs</a></li>
           <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>
@@ -3851,6 +3888,55 @@
   <a href="https://wa.me/442088665556?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Woodlands%20Centre%20for%20Dentistry." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.85.5 3.667 1.446 5.253L2 22l4.865-1.427A9.955 9.955 0 0 0 12.001 22C17.523 22 22 17.523 22 12S17.523 2 12.001 2zm0 18.062a8.02 8.02 0 0 1-4.302-1.246l-.309-.184-3.11.912.917-3.111-.194-.311A8.021 8.021 0 0 1 3.938 12c0-4.446 3.617-8.062 8.063-8.062 4.445 0 8.061 3.616 8.061 8.062 0 4.446-3.616 8.062-8.061 8.062z"></path></svg>
   </a>
+
+  <script>
+  // Phone fee categories: arrows show when more categories are off-screen,
+  // and the category being read is highlighted and kept in view
+  (function () {
+    var strip = document.querySelector('.pricing-tabs');
+    if (!strip) return;
+    var prev = document.querySelector('.pricing-tabs-arrow.prev');
+    var next = document.querySelector('.pricing-tabs-arrow.next');
+    var tabs = Array.prototype.slice.call(strip.querySelectorAll('.ba-tab'));
+
+    function updateArrows() {
+      var max = strip.scrollWidth - strip.clientWidth;
+      prev.hidden = strip.scrollLeft <= 4;
+      next.hidden = strip.scrollLeft >= max - 4;
+    }
+    function page(dir) {
+      strip.scrollBy({ left: dir * strip.clientWidth * 0.7, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function () { page(-1); });
+    next.addEventListener('click', function () { page(1); });
+    strip.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+
+    function setActive(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.classList.toggle('active', on);
+        if (on) t.setAttribute('aria-current', 'true'); else t.removeAttribute('aria-current');
+      });
+      if (tab && strip.scrollWidth > strip.clientWidth) {
+        var left = tab.offsetLeft - (strip.clientWidth - tab.offsetWidth) / 2;
+        strip.scrollTo({ left: left, behavior: 'smooth' });
+      }
+    }
+    var sections = tabs.map(function (t) { return document.querySelector(t.getAttribute('href')); });
+    function onScroll() {
+      var line = 200, current = null;
+      sections.forEach(function (sec, i) {
+        if (sec && sec.getBoundingClientRect().top <= line) current = tabs[i];
+      });
+      if (current && !current.classList.contains('active')) setActive(current);
+      if (!current) tabs.forEach(function (t) { t.classList.remove('active'); t.removeAttribute('aria-current'); });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
 
   <!-- Sticky Mobile Bottom CTA Bar -->
   <div class="mobile-bottom-bar">

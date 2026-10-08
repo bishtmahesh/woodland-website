@@ -1925,20 +1925,26 @@
   .tooth-chart-row {
     display: flex;
     align-items: center;
-    gap: 3px;
-    margin-bottom: 6px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    gap: 8px 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .tooth-quad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   .tooth-chip {
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     border: 1.5px solid rgba(10, 35, 28, 0.18);
     background: var(--ivory);
     color: var(--text-muted);
-    font-size: 9px;
+    font-size: 12px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1964,6 +1970,19 @@
     background: var(--gold-warm);
     border-color: var(--gold-warm);
     color: #fff;
+  }
+
+  .tooth-chip:focus-visible {
+    outline: 2px solid var(--forest-dark);
+    outline-offset: 2px;
+  }
+
+  .form-field-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 6px 4px;
   }
 
   .tooth-chart-divider {
@@ -2484,6 +2503,8 @@
   .whatsapp-float { bottom: 24px !important; }
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
+    /* Keep the footer clear of the fixed Call/Book bar */
+    .footer-section { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
   }
 
@@ -3384,7 +3405,7 @@
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
-          <li><a href="index.html#contact" class="footer-link">Fees</a></li>
+          <li><a href="fee-list.html" class="footer-link">Fees</a></li>
           <li><a href="index.html#faq" class="footer-link">FAQs</a></li>
           <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>
@@ -3536,13 +3557,47 @@
     var lowerRight = [48,47,46,45,44,43,42,41];
     var lowerLeft = [31,32,33,34,35,36,37,38];
     function chip(n) {
-      return '<button type="button" class="tooth-chip" onclick="toggleToothChip(this, ' + n + ')">' + n + '</button>';
+      return '<button type="button" class="tooth-chip" data-tooth="' + n + '" aria-pressed="false" aria-label="Tooth ' + n + '" onclick="toggleToothChip(this, ' + n + ')">' + n + '</button>';
+    }
+    function quad(teeth) {
+      return '<div class="tooth-quad">' + teeth.map(chip).join('') + '</div>';
     }
     return (
-      '<div class="tooth-chart-row">' + upperRight.map(chip).join('') + '<div class="tooth-quad-divider"></div>' + upperLeft.map(chip).join('') + '</div>' +
+      '<div class="tooth-chart-row">' + quad(upperRight) + '<div class="tooth-quad-divider"></div>' + quad(upperLeft) + '</div>' +
       '<div class="tooth-chart-divider"></div>' +
-      '<div class="tooth-chart-row">' + lowerRight.map(chip).join('') + '<div class="tooth-quad-divider"></div>' + lowerLeft.map(chip).join('') + '</div>'
+      '<div class="tooth-chart-row">' + quad(lowerRight) + '<div class="tooth-quad-divider"></div>' + quad(lowerLeft) + '</div>'
     );
+  }
+
+  // Typed tooth numbers light up the matching chips, so the chart and the field never disagree
+  function syncToothChipsFromInput(input) {
+    var nums = input.value.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+    document.querySelectorAll('.tooth-chip').forEach(function(c) {
+      var on = nums.indexOf(c.getAttribute('data-tooth')) > -1;
+      c.classList.toggle('active', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  // Visible labels that stay put after typing (placeholders vanish once a value is entered)
+  var labelCounter = 0;
+  function addFieldLabels(root) {
+    root.querySelectorAll('.form-input').forEach(function(el) {
+      if (el.type === 'file' || el.type === 'hidden' || el.dataset.labelled) return;
+      var text = el.tagName === 'SELECT'
+        ? (el.querySelector('option[disabled]') || {}).textContent
+        : el.getAttribute('placeholder');
+      if (!text) return;
+      if (el.type === 'date') text = text.replace(/^Patient Date of Birth/, 'Date of Birth');
+      if (el.id === 'area-of-interest-input') text = 'Tooth Numbers *';
+      if (!el.id) el.id = 'ref-field-' + (++labelCounter);
+      var label = document.createElement('label');
+      label.className = 'form-field-label';
+      label.htmlFor = el.id;
+      label.textContent = text;
+      el.parentNode.insertBefore(label, el);
+      el.dataset.labelled = '1';
+    });
   }
 
   function buildAreaOfInterestOnlyHTML() {
@@ -3586,6 +3641,7 @@
 
   function toggleToothChip(el, num) {
     el.classList.toggle('active');
+    el.setAttribute('aria-pressed', el.classList.contains('active') ? 'true' : 'false');
     var input = document.getElementById('area-of-interest-input');
     if (!input) return;
     var nums = input.value.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
@@ -3613,6 +3669,7 @@
       }
       return '<div class="form-group"><input type="' + f.type + '" class="form-input" placeholder="' + f.placeholder + '" required></div>';
     }).join('');
+    addFieldLabels(container);
   }
 
   function selectReferralType(el, type) {
@@ -3647,6 +3704,12 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     renderDynamicFields('Extractions');
+    var form = document.getElementById('dynamic-referral-fields');
+    if (form) addFieldLabels(form.closest('form'));
+  });
+
+  document.addEventListener('input', function(e) {
+    if (e.target && e.target.id === 'area-of-interest-input') syncToothChipsFromInput(e.target);
   });
 
   var __megaMenuCloseTimers = {};

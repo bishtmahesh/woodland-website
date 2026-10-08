@@ -2009,6 +2009,9 @@
     transform: scale(1.06);
   }
 
+  .patient-video-card.is-coming-soon { cursor: default; }
+  .patient-video-card.is-coming-soon:hover img { transform: none; }
+
   .patient-video-overlay {
     position: absolute;
     inset: 0;
@@ -2866,6 +2869,8 @@
   .whatsapp-float { bottom: 24px !important; }
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
+    /* Keep the footer clear of the fixed Call/Book bar */
+    .footer-section { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
     .whatsapp-float.wa-visible { opacity: 1; pointer-events: auto; }
@@ -2943,7 +2948,7 @@
         <div style="font-size: 12px; color: var(--sage); margin-top: 4px;">Happy Patients</div>
       </div>
       <div>
-        <div style="font-size: 28px; font-weight: 700; color: var(--ivory); font-family: 'Manrope', sans-serif; line-height: 1;">25+</div>
+        <div style="font-size: 28px; font-weight: 700; color: var(--ivory); font-family: 'Manrope', sans-serif; line-height: 1;">35+</div>
         <div style="font-size: 12px; color: var(--sage); margin-top: 4px;">Years Experience</div>
       </div>
     </div>
@@ -2985,7 +2990,7 @@
     </div>
 
     <div class="hero-stats-bar">
-      <p class="hero-tagline">Specialist orthodontic and dental care for North Harrow and the surrounding area, since 1999.</p>
+      <p class="hero-tagline">Specialist orthodontic and dental care for North Harrow and the surrounding area, since 1990.</p>
 
       <div class="hero-stats-group">
         <div class="stat-card">
@@ -2997,7 +3002,7 @@
           <div class="stat-label">Happy Patients</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number"><span class="count-up" data-target="25">25</span>+</div>
+          <div class="stat-number"><span class="count-up" data-target="35">35</span>+</div>
           <div class="stat-label">Years of Experience</div>
         </div>
       </div>
@@ -3022,7 +3027,7 @@
       </div>
       <div class="ribbon-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-        <strong>Specialist Orthodontic &amp; Premier Dental Practice Since 1999</strong>
+        <strong>Specialist Orthodontic &amp; Premier Dental Practice Since 1990</strong>
       </div>
       
       <!-- Duplicate items for continuous loop -->
@@ -3040,7 +3045,7 @@
       </div>
       <div class="ribbon-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-        <strong>Specialist Orthodontic &amp; Premier Dental Practice Since 1999</strong>
+        <strong>Specialist Orthodontic &amp; Premier Dental Practice Since 1990</strong>
       </div>
     </div>
   </div>
@@ -3059,8 +3064,8 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">About Us</h3>
-        <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">A 40+ year orthodontic heritage, now a comprehensive dental practice built around you.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">Discover Our Practice &rarr;</span>
+        <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">A 35+ year orthodontic heritage, now a comprehensive dental practice built around you.</p>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">Discover Our Practice &rarr;</span>
       </a>
 
       <a href="treatments.html" style="display: block; background: var(--ivory); border: 1px solid rgba(10,35,28,0.06); border-radius: 24px; padding: 32px 28px; text-decoration: none !important; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(10,35,28,0.04);">
@@ -3069,7 +3074,7 @@
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">Treatments</h3>
         <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">From routine check-ups to restorative and specialist care, every treatment under one roof.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">View All Treatments &rarr;</span>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">View All Treatments &rarr;</span>
       </a>
 
       <a href="treatments.html" style="display: block; background: var(--ivory); border: 1px solid rgba(10,35,28,0.06); border-radius: 24px; padding: 32px 28px; text-decoration: none !important; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(10,35,28,0.04);">
@@ -3078,7 +3083,7 @@
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">Braces &amp; Invisalign</h3>
         <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">The specialist orthodontic care we were built on, for children, teens and adults.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">Discover Braces &amp; Invisalign &rarr;</span>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">Discover Braces &amp; Invisalign &rarr;</span>
       </a>
 
       <a href="dental-implants.html" style="display: block; background: var(--ivory); border: 1px solid rgba(10,35,28,0.06); border-radius: 24px; padding: 32px 28px; text-decoration: none !important; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(10,35,28,0.04);">
@@ -3087,7 +3092,7 @@
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">Dental Implants</h3>
         <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">Permanent, natural-feeling tooth replacements planned with 3D precision.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">Explore Dental Implants &rarr;</span>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">Explore Dental Implants &rarr;</span>
       </a>
 
       <a href="javascript:void(0)" style="display: block; background: var(--ivory); border: 1px solid rgba(10,35,28,0.06); border-radius: 24px; padding: 32px 28px; text-decoration: none !important; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(10,35,28,0.04);">
@@ -3096,7 +3101,7 @@
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">Cosmetic Dentistry</h3>
         <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">Composite bonding, teeth whitening and smile makeovers, done thoughtfully.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">Explore Cosmetic Dentistry &rarr;</span>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">Explore Cosmetic Dentistry &rarr;</span>
       </a>
 
       <a href="javascript:void(0)" style="display: block; background: var(--ivory); border: 1px solid rgba(10,35,28,0.06); border-radius: 24px; padding: 32px 28px; text-decoration: none !important; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(10,35,28,0.04);">
@@ -3105,7 +3110,7 @@
         </div>
         <h3 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 21px; color: var(--forest-dark); margin-bottom: 8px;">Facial Aesthetics</h3>
         <p style="font-size: 14.5px; color: rgba(10,35,28,0.65); line-height: 1.6; margin-bottom: 16px;">Anti-wrinkle treatments, dermal fillers and TMJ/masseter Botox, delivered with care.</p>
-        <span style="font-size: 13px; font-weight: 700; color: var(--gold-warm); letter-spacing: 0.6px; text-transform: uppercase;">Explore Facial Aesthetics &rarr;</span>
+        <span style="font-size: 13px; font-weight: 700; color: #7D6230; letter-spacing: 0.6px; text-transform: uppercase;">Explore Facial Aesthetics &rarr;</span>
       </a>
     </div>
   </section>
@@ -3117,7 +3122,7 @@
         <div class="gold-badge" style="margin-bottom: 18px;">A Woodlands Heritage</div>
         <h2 class="section-title" style="color: var(--forest-dark); font-size: 44px; margin-bottom: 20px;">Specialist Orthodontics, Since Day One</h2>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 16px;">
-          Woodlands Centre for Dentistry has cared for patients in North Harrow for more than four decades, building a patient family of over 15,000 people across generations. Long before "comprehensive dentistry" became part of who we are, Woodlands was already known locally for one thing: specialist orthodontics. That's the reputation we were built on, and it's still central to how we work today.
+          Woodlands Centre for Dentistry has cared for patients in North Harrow for more than 35 years, building a patient family of over 15,000 people across generations. Long before "comprehensive dentistry" became part of who we are, Woodlands was already known locally for one thing: specialist orthodontics. That's the reputation we were built on, and it's still central to how we work today.
         </p>
         <p style="font-size: 16.5px; line-height: 1.75; color: rgba(10,35,28,0.7); max-width: 520px; margin-bottom: 24px;">
           What began as a specialist orthodontic practice has grown into a comprehensive private dental practice in Harrow, offering the same considered, personalised care that has defined us from the start, now extended to meet a wider range of dental needs under one roof. Every brace, aligner, and bite correction still follows the same specialist standard our patients have trusted for years.
@@ -3434,10 +3439,10 @@
       <!-- Card 2 (Top Middle, Light Card) -->
       <div class="bento-card-modern">
         <div>
-          <div class="bento-stat-num" style="color: var(--forest-dark); margin-bottom: 8px;"><span class="count-up" data-target="25">25</span>+</div>
+          <div class="bento-stat-num" style="color: var(--forest-dark); margin-bottom: 8px;"><span class="count-up" data-target="35">35</span>+</div>
           <div style="font-size: 16px; font-weight: 700; color: var(--forest-dark); margin-bottom: 6px;">Long-Standing Local Trust</div>
         </div>
-        <div style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">Built on trusted foundations serving North Harrow since 1999 with specialist and general dental care.</div>
+        <div style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">Built on trusted foundations serving North Harrow since 1990 with specialist and general dental care.</div>
       </div>
 
       <!-- Card 3 (Right Column, Tall Image) -->
@@ -3797,7 +3802,7 @@
           <li><a href="#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
-          <li><a href="#contact" class="footer-link">Fees</a></li>
+          <li><a href="fee-list.html" class="footer-link">Fees</a></li>
           <li><a href="#faq" class="footer-link">FAQs</a></li>
           <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>
@@ -4075,6 +4080,21 @@
       group.classList.toggle('expanded');
     }
   }
+
+  // Cards without a video yet: say so up front instead of opening a placeholder modal
+  document.querySelectorAll('.patient-video-card').forEach(function (card) {
+    if (card.getAttribute('data-video-src')) return;
+    card.classList.add('is-coming-soon');
+    card.removeAttribute('onclick');
+    card.removeAttribute('onkeydown');
+    card.removeAttribute('role');
+    card.removeAttribute('tabindex');
+    card.removeAttribute('aria-label');
+    const play = card.querySelector('.patient-video-play');
+    if (play) play.remove();
+    const caption = card.querySelector('.patient-video-caption > div:last-child');
+    if (caption) caption.textContent = 'Video Coming Soon';
+  });
 
   function openPatientVideo(card) {
     const modal = document.getElementById('patientVideoModal');

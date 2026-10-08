@@ -2449,6 +2449,8 @@
   .whatsapp-float { bottom: 24px !important; }
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
+    /* Keep the footer clear of the fixed Call/Book bar */
+    .footer-section { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
   }
 
@@ -2979,7 +2981,7 @@
         At Woodlands Centre for Dentistry, we provide comprehensive periodontal treatment in Harrow, combining detailed assessment, personalised treatment planning and ongoing preventive care to help maintain the health of your gums and the structures supporting your teeth.
       </p>
       <p class="section-desc" style="font-size: 16px; line-height: 1.7; margin-bottom: 18px;">
-        With more than 40 years of dental heritage, Woodlands Centre for Dentistry has built lasting relationships within the local community. As the practice continues to develop its comprehensive private dentistry offering, our approach remains rooted in experienced clinical care, modern dentistry and a genuine focus on each patient's long-term oral health.
+        With more than 35 years of dental heritage, Woodlands Centre for Dentistry has built lasting relationships within the local community. As the practice continues to develop its comprehensive private dentistry offering, our approach remains rooted in experienced clinical care, modern dentistry and a genuine focus on each patient's long-term oral health.
       </p>
 
       <h2 style="font-family: 'Bodoni Moda', 'Cormorant Garamond', serif; font-size: 28px; color: var(--forest-dark); margin-bottom: 14px;">What Is Periodontal Disease?</h2>
@@ -3537,7 +3539,7 @@
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
-          <li><a href="index.html#contact" class="footer-link">Fees</a></li>
+          <li><a href="fee-list.html" class="footer-link">Fees</a></li>
           <li><a href="index.html#faq" class="footer-link">FAQs</a></li>
           <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>

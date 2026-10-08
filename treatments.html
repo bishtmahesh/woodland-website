@@ -2372,6 +2372,8 @@
   .whatsapp-float { bottom: 24px !important; }
   @media (max-width: 768px) {
     .mobile-bottom-bar { display: flex !important; }
+    /* Keep the footer clear of the fixed Call/Book bar */
+    .footer-section { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px)) !important; }
     .whatsapp-float { bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important; }
   }
 
@@ -2972,7 +2974,7 @@
       <div class="gold-badge" style="margin-bottom: 14px;">Every Treatment, One Standard</div>
       <h2 class="section-title" style="font-size: 38px; margin-bottom: 14px;">A Full Range of Dental Care, Under One Roof</h2>
       <p class="section-desc" style="font-size: 16px; line-height: 1.7; margin-bottom: 18px;">
-        From replacing a single tooth to a complete smile makeover, every treatment at Woodlands Centre for Dentistry follows the same considered, unhurried approach that has defined our practice for more than four decades.
+        From replacing a single tooth to a complete smile makeover, every treatment at Woodlands Centre for Dentistry follows the same considered, unhurried approach that has defined our practice for more than 35 years.
       </p>
       <p class="section-desc" style="font-size: 16px; line-height: 1.7;">
         Browse our treatments below by category, or get in touch and our team will help you find the right option for your smile.
@@ -3453,7 +3455,7 @@
           <li><a href="index.html#why-us" class="footer-link">Why Choose Us</a></li>
           <li><a href="meet-the-team.html" class="footer-link">Meet the Team</a></li>
           <li><a href="smile-gallery.html" class="footer-link">Smile Gallery</a></li>
-          <li><a href="index.html#contact" class="footer-link">Fees</a></li>
+          <li><a href="fee-list.html" class="footer-link">Fees</a></li>
           <li><a href="index.html#faq" class="footer-link">FAQs</a></li>
           <li><a href="your-patient-journey.html" class="footer-link">Your Patient Journey</a></li>
           <li><a href="referrals.html" class="footer-link">Referrals</a></li>
